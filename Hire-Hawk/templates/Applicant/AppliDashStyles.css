@@ -1,0 +1,27 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #B467EF, #66D1FF);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .dashboard-container {
+    text-align: center;
+    background-color: #66D1FF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 18px;
+  }
+  

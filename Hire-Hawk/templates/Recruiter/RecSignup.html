@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HireHawk SignUp</title>
+  <link rel="stylesheet" href="RecLogin&SignupStyles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"> <!-- Link to Poppins font -->
+</head>
+<body>
+
+  <img src="/assets/images/HireHawkLogo.png" alt="HireHawkLogo" style="width: 100%; max-width: 300px; margin-bottom: 20px; padding-right: 70px;">
+
+  <div class="container">
+  <form id="signupForm">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+    <div id="error-message" class="error-message"></div>
+
+    <button type="button" onclick="validateSignup()">Sign Up</button>
+  </form>
+
+  <p>Already have an account? <a href="RecLogin.html">Login</a></p>
+</div>
+
+  <script src="RecSignupScript.js"></script>
+
+</body>
+</html>
