@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+{%load static %}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Choose Your Role</title>
-  <link rel="stylesheet" href="rolesStyles.css">
+  <link rel="stylesheet" href="{% static "css/rolesStyles.css" %}">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"> <!-- Link to Poppins font -->
 </head>
 <body>
@@ -18,7 +19,7 @@
     </div>
   </div>
 
-  <script src="rolesScript.js"></script>
+  <script src="{% static "js/rolesScript.js"%}"></script>
 
 </body>
 </html>
