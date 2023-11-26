@@ -1,13 +1,14 @@
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
+  background: linear-gradient(to right, #B467EF, #66D1FF );
 }
 
 nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: linear-gradient(to right, #66D1FF, #B467EF);
+  background: linear-gradient(to right, #131414, #3b3342);
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -15,7 +16,7 @@ nav {
 }
 
 nav .logo img {
-  max-height: 40px; /* Adjust as needed */
+  max-height: 40px; 
 }
 
 nav ul {
@@ -43,6 +44,37 @@ nav .profile img {
 }
 
 .content {
-  margin-top: 70px;
+  margin-top: 16px; 
+  margin-left: 20px;
+  margin-right: 20px;
   padding: 20px;
+  background-color: #66D1FF;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
+  border: none;
+  box-shadow: 0 0 0 0.2px black;
+}
+
+.text-content {
+  margin-bottom: 10px; 
+}
+
+.text-content h2,
+.text-content p {
+  margin: 0;
+}
+
+
+button {
+  font-family: 'Poppins', sans-serif;
+  background-color: #B467EF;
+  color: white;
+  padding: 11px 30px;
+  border: none;
+  border-radius: 23px;
+  cursor: pointer;
+  margin-left: auto; 
+  font-weight: 600;
 }
