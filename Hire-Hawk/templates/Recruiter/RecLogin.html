@@ -1,19 +1,21 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HireHawk Login</title>
-  <link rel="stylesheet" href="RecLogin&SignupStyles.css">
+  <link rel="stylesheet" href="{% static "css/loginstyle.css" %}">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 
-  <img src="/assets/images/HireHawkLogo.png" alt="HireHawkLogo" style="width: 100%; max-width: 300px; margin-bottom: 20px; padding-right: 70px;">
+  <img src="{% static "image/HireHawkLogo.png" %}" alt="HireHawkLogo" style="width: 100%; max-width: 300px; margin-bottom: 20px; padding-right: 70px;">
 
   <div class="container">
-  <form id="loginForm">
+  <form id="loginForm" method="POST" action={% url 'login'%}>
+    {% csrf_token %}
     <label for="email">Email</label>
     <input type="email" id="email" name="email" required>
 
@@ -22,11 +24,11 @@
 
     <div id="error-message" class="error-message"></div>
 
-    <button type="button" onclick="validateLogin()">Login</button>
+    <button type="submit" onclick="validateLogin()">Login</button>
   </form>
 
 
-<p>Don't have an account? <a href="RecSignup.html">Sign up</a></p>
+<p>Don't have an account? <a href="{% url 'signup' %}">Sign up</a></p>
 </div>
  
   <script src="RecLoginScript.js"></script>

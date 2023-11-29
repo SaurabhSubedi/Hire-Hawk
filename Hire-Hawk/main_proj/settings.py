@@ -128,3 +128,8 @@ STATICFILES_DIRS = [
 #media lai url ko through bata access garna ko lagi use hunxa
 MEDIA_URL = '/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'static/images')
+
+AUTHENTICATION_BACKENDS = [
+    'resume_manager.emailbackend.EmailBackend',  # Replace with the actual path to your EmailBackend
+    'django.contrib.auth.backends.ModelBackend',
+]

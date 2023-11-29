@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load myfilter %}
 
 <head>
     <meta charset="UTF-8">
@@ -11,14 +12,14 @@
 
     <div class="container">
         <div class="job-container">
-            <div class="job-title">QA Engineer</div>
+            <div class="job-title">{{job.title}}</div>
             <div class="company-location">MoonShine Technologies · Kathmandu, Nepal</div>
-            <div class="job-info">2 weeks ago · 34 applicants</div>
+            <div class="job-info">{{job.created_at|timesince}} ago· {{appli_count}} applicants</div>
 
             <div class="skills-list">
-                <li>Scrum Management Planning</li>
-                <li>Python</li>
-                <li>+3 More</li>
+                <li>{{job.skill1}} </li>
+                <li>{{job.skill2}}</li>
+                <li>{{job.skill3}}</li>
             </div>
 
             <button id="fileInputButton">Upload Resume</button>
@@ -28,11 +29,26 @@
         <div class="job-section">
             <div class="section-header">About the Job</div>
             <div class="job-description">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    <p>· Sed ac quam id libero auctor suscipit.</p>
-                    <p>· Proin lacinia justo a nunc efficitur consectetur.</p> 
-                    <p>· Integer auctor hendrerit risus.</p>
-                    Donec vulputate, libero et malesuada tincidunt, odio risus eleifend justo, vel aliquam nisl neque nec sem.</p>
+                <h4>Responsibilites:</h4>
+                <p>
+                    <ul>
+                    {% for sentence in job.responsibility|period_split %}
+                        {% if sentence %}
+                           <li>{{sentence}}.</li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                </p>
+                <h4>Requirements:</h4>
+                <p>
+                    <ul>
+                    {% for sentence in job.requirement|period_split %}
+                        {% if sentence %}
+                           <li>{{sentence}}.</li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                </p>
             </div>
         </div>
     </div>

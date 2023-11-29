@@ -1,22 +1,23 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Applicant HomePage</title>
-  <link rel="stylesheet" href="AppliDashStyles.css">
+  <link rel="stylesheet" href="{% static "css/AppliDashStyles.css" %}">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <nav>
     <div class="logo">
-      <img src="/assets/images/HireHawkLogo.png" alt="Logo">
+      <img src="{% static "image/HireHawkLogo.png"%}" alt="Logo">
     </div>
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
-      <li class="profile"><img src="/assets/images/profile-image.jpg" alt="Profile Avatar"></li>
+      <li class="profile"><img src="{% static "image/profile-image.jpg" %}" alt="Profile Avatar"></li>
     </ul>
   </nav>
 
@@ -25,58 +26,29 @@
       <h2></h2>
       <p></p>
     </div>
-    <input type="file" id="fileInput" accept=".docx, .pdf" style="display: none;">
+    <input type="file" id="fileInput" accept=".pdf" style="display: none;">
   </div>
-
+{% for job in jobs %}
   <div class="content" onclick="redirectToAboutJob()">
     <div class="text-content">
-      <h2>QA Engineer</h2>
-      <p>A skilled QA Engineer is required at MoonShine Technologies.
-        The QA Engineer should be responsible for monitoring and assuring the
-        Quality of Software by performaing various tasks through hands on Experiences.
+      <h2>{{job.title}}</h2>
+      <p>
+        {{job.brief_stat}}
       </p>
     </div>
-    <button id="fileInputButton" onclick="redirectToAboutJob()">View Details</button>
+    <form method="post" action={% url 'job_desc'%}>
+      {% csrf_token %}
+      <input type = "hidden" value = {{job.id}} name="job_id" ></input>
+     <button id="fileInputButton" onclick="redirectToAboutJob()" type = "submit">
+      View Details
+     </button>
+    </form>
     <div class="selected-file" id="selectedFile1"></div>
   </div>
+{% endfor %}
 
-  <div class="content" onclick="redirectToAboutJob()">
-    <div class="text-content">
-      <h2>QA Engineer</h2>
-      <p>We need QA Engineer Asap</p>
-    </div>
-    <button id="fileInputButton" onclick="redirectToAboutJob()">View Details</button>
-    <div class="selected-file"></div>
-  </div>
-
-  <div class="content" onclick="redirectToAboutJob()">
-    <div class="text-content">
-      <h2>Senior Python Developer</h2>
-      <p>We need Python Developer Asap. We need Python Developer Asap. We need Python Developer Asap. We need Python Developer Asap. We need Python Developer Asap. We need Python Developer Asap</p>
-    </div>
-    <div class="selected-file"></div>
-    <button id="fileInputButton" onclick="redirectToAboutJob()">View Details</button>
-  </div>
-
-  <div class="content" onclick="redirectToAboutJob()">
-    <div class="text-content">
-      <h2>Senior Python Developer</h2>
-      <p>We need Python Developer Asap</p>
-    </div>
-    <div class="selected-file"></div>
-    <button id="fileInputButton" onclick="redirectToAboutJob()">View Details</button>
-  </div>
-
-  <div class="content" onclick="redirectToAboutJob()">
-    <div class="text-content">
-      <h2>Senior Python Developer</h2>
-      <p>We need Python Developer Asap</p>
-    </div>
-    <div class="selected-file" ></div>
-    <button id="fileInputButton" onclick="redirectToAboutJob()">View Details</button>
-  </div>
-
-  <script src="AppliScript.js"></script>
+ 
+  <script src="{% static "js/AppliScript.js" %}"></script>
 
 </body>
 </html>

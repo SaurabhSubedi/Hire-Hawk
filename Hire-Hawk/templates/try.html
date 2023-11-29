@@ -1,0 +1,6 @@
+<h2>Applicants for Job Description {{ job_description_id }}</h2>
+<ul>
+    {% for applicant in applicants %}
+        <li>{{ applicant.user.email }}</li>
+    {% endfor %}
+</ul>

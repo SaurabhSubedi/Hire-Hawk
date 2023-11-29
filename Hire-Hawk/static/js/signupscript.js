@@ -32,7 +32,6 @@ function validateSignup() {
     return;
   }
   
-  window.location.href = 'RecLogin.html';
 }
 
 // Validator function for email format

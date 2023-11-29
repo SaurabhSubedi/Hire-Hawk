@@ -9,4 +9,11 @@ document.getElementById('fileInputButton').addEventListener('click', function() 
       alert(`Selected file: ${fileName}`);
       // You can add additional logic here to handle the selected file
     }
+
   });
+
+
+  function redirectToAboutJob() {
+    window.location.href = 'AboutJob.html';
+  }
+  

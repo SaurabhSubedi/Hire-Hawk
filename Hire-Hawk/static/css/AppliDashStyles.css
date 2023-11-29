@@ -1,7 +1,7 @@
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
-  background: linear-gradient(to right, #B467EF, #66D1FF );
+  /* background: linear-gradient(to right, #B467EF, #66D1FF ); */
 }
 
 nav {
@@ -48,7 +48,8 @@ nav .profile img {
   margin-left: 20px;
   margin-right: 20px;
   padding: 20px;
-  background-color: #66D1FF;
+  cursor: pointer;
+  /* background-color: #66D1FF; */
   border-radius: 12px;
   display: flex;
   flex-direction: column; 
@@ -70,11 +71,25 @@ nav .profile img {
 button {
   font-family: 'Poppins', sans-serif;
   background-color: #B467EF;
-  color: white;
+  color: black;
   padding: 11px 30px;
-  border: none;
+  /* border: none; */
   border-radius: 23px;
   cursor: pointer;
   margin-left: auto; 
   font-weight: 600;
+  border: 1px solid;
+}
+
+#fileInputButton {
+  border: 1px solid black;
+  background-color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#fileInputButton:hover {
+  background-color: #B467EF;
+  color: white; /* Optional: Change text color on hover */
 }

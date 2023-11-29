@@ -1,20 +1,25 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HireHawk SignUp</title>
-  <link rel="stylesheet" href="RecLogin&SignupStyles.css">
+  <link rel="stylesheet" href="{% static "css/loginstyle.css"%}">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"> <!-- Link to Poppins font -->
 </head>
 <body>
 
-  <img src="/assets/images/HireHawkLogo.png" alt="HireHawkLogo" style="width: 100%; max-width: 300px; margin-bottom: 20px; padding-right: 70px;">
+  <img src="{% static 'image/HireHawkLogo.png'%}" alt="HireHawkLogo" style="width: 100%; max-width: 300px; margin-bottom: 20px; padding-right: 70px;">
 
   <div class="container">
-  <form id="signupForm">
+  <form id="signupForm" method="post" action = {% url 'signup' %}>
+    {% csrf_token %}
     <label for="name">Name</label>
     <input type="text" id="name" name="name" required>
+    <label for="name">Username</label>
+    <input type="text" id="username" name="username" required>
+   
 
     <label for="email">Email</label>
     <input type="email" id="email" name="email" required>
@@ -27,13 +32,13 @@
 
     <div id="error-message" class="error-message"></div>
 
-    <button type="button" onclick="validateSignup()">Sign Up</button>
+    <button type="submit" onclick="validateSignup()">Sign Up</button>
   </form>
 
   <p>Already have an account? <a href="RecLogin.html">Login</a></p>
 </div>
 
-  <script src="RecSignupScript.js"></script>
+  <script src="{% static "js/signupscript.js" %}"></script>
 
 </body>
 </html>
