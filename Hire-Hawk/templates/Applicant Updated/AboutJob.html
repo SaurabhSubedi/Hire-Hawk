@@ -21,13 +21,12 @@
                 <li>{{job.skill2}}</li>
                 <li>{{job.skill3}}</li>
             </div>
-            <form method="post" action = {% url 'resume_upload'%} enctype="multipart/form-data">
-            {% csrf_token %}
-            <input type="file" id="fileInput" accept=".pdf,.docx" name="resume">
-            <input type="hidden" name="job_desc" value = {{job.id}}>
-            <button type="submit">Upload Resume</button>
-            </form>
+
+            <button id="fileInputButton">Upload Resume</button>
+            <input type="file" id="fileInput" accept=".docx, .pdf" style="display: none;">
         </div>
+            
+          
 
         <div class="job-section">
             <div class="section-header">About the Job</div>
@@ -160,6 +159,128 @@
             background-color: #B467EF;
             color: white; /* Optional: Change text color on hover */
         }
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap');
+
+
+.box {
+  /* position: relative;
+  width: 250px;
+  height: 240px; */
+  display: none;
+  /* justify-content: center; */
+  align-items: center;
+  /* position: absolute; */
+  bottom: 0;
+  right: 0;
+  margin-bottom: 20px;
+}
+
+
+.box .content {
+  align-items: center;
+}
+
+.box .content .percent {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.box .content .percent::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 20px;
+  background: #555;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 1.75rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+.box .content .percent svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  transform: rotate(270deg);
+}
+
+.box .content .percent svg circle {
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke-width: 3;
+  stroke: rgba(0,0,0,0.05);
+  transform: translate(5px, 5px);
+}
+
+.box .content .percent svg circle:nth-child(2) {
+  stroke: #555;
+  stroke-dasharray: 440;
+  stroke-dashoffset: calc(440 - (440 * var(--num)) / 100);
+  opacity: 0;
+  animation: fadeIn 1s linear forwards;
+  animation-delay: 2.5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.box .content .percent .dot {
+  position: absolute;
+  inset: 5px;
+  z-index: 10;
+  animation: animateDot 2s linear forwards;
+}
+
+@keyframes animateDot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(calc(3.6deg * var(--num)));
+  }
+}
+
+.box .content .percent .dot::before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  background: #555;
+  border-radius: 50%;
+}
+
+.box .content .number {
+  position: relative;
+  inset: 0;
+  opacity: 0;
+  animation: fadeIn 1s linear forwards;
+  animation-delay: 2.5s;
+}
+
+.box .content .number h2 {
+  font-size: 2.5rem;
+  color: #555;
+}
+
+.box .content .number h2 span {
+  font-weight: 300;
+  font-size: 1.5rem;
+}
         
     </style>
 
@@ -176,6 +297,17 @@
     }
 
   });
+
+  
+  function showDivAfterDelay() {
+      // Get the div element
+      var divToShow = document.querySelector('.box');
+
+      // Show the div after 5 seconds
+      setTimeout(function () {
+        divToShow.style.display = 'block';
+      }, 5000);
+    }
     </script>
 </body>
 
