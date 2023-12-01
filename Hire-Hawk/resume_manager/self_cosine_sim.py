@@ -2,6 +2,8 @@ import nltk
 from nltk.tokenize import word_tokenize
 import numpy as np
 import math
+import PyPDF2
+import docx
 
 nltk.download('punkt')
 
@@ -51,3 +53,29 @@ def my_cosine_similarity(resume1, resume2):
     norm_vector2 = magnitude(vector2)
     cosin_sim = dot_product / (norm_vector1 * norm_vector2)
     return cosin_sim
+
+
+def read_text(file_path):
+    file_extension = file_path.split('.')[-1].lower()
+    if file_extension == 'docx':
+        return read_docx(file_path)
+    elif file_extension == 'pdf':
+        return read_pdf(file_path)
+    else:
+        raise ValueError("Unsupported file type. Only DOCX and PDF files are supported.")
+
+def read_docx(file_path):
+    doc = docx.Document(file_path)
+    text = []
+    for para in doc.paragraphs:
+        text.append(para.text)
+    return '\n'.join(text)
+    
+def read_pdf(file_path):
+    with open(file_path, 'rb') as pdf_file:
+        pdf_reader = PyPDF2.PdfReader(pdf_file)
+        text = ''
+        for page_num in range(len(pdf_reader.pages)):
+            page = pdf_reader.pages[page_num]
+            text += page.extract_text()
+    return text

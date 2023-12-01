@@ -1,12 +1,16 @@
-from django.shortcuts import render,redirect
-from .models import Job_description
+from django.shortcuts import render,redirect,reverse
+from .models import Job_description,Applicant
 from django.contrib.auth import login, logout,authenticate
 from django.contrib.auth.models import User
+from .self_cosine_sim import my_cosine_similarity,read_text
 # Create your views here.
 
 def applicant_view(request):
-    jobs = Job_description.objects.all()
-    return render(request,'Applicant Updated/AppliDashboard.html',{'jobs': jobs})
+    if request.user.is_authenticated:
+        jobs = Job_description.objects.all()
+        return render(request,'Applicant Updated/AppliDashboard.html',{'jobs': jobs})
+    else:
+        return redirect('login')
         
 
 def job_details_view(request):
@@ -18,6 +22,8 @@ def job_details_view(request):
 
 
 def login_view(request):
+    if request.user.is_authenticated:
+        return redirect('appview')
     if request.method == "POST":
         email = request.POST.get("email")
         password = request.POST.get("password")
@@ -32,6 +38,7 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
+    return redirect('login')
 
 def signup_view(request):
     if request.method == "POST":
@@ -50,3 +57,29 @@ def signup_view(request):
                 user.save()
                 return redirect("appview")
     return render(request,'Recruiter/RecSignup.html')
+
+
+def resume_upload(request):
+    if request.method == "POST":
+        resume = request.FILES['resume']
+        current_user = request.user
+        job_id = request.POST.get("job_desc")
+        job = Job_description.objects.get(id = job_id)
+        new_appli = Applicant(user = current_user,job_description= job,resume= resume)
+        new_appli.save()
+        job_requirement = job.requirement
+        resume_text = read_text(new_appli.resume.path)
+        score = my_cosine_similarity(job_requirement,resume_text)
+        print(score)
+        score = score*100
+        score = int(score)
+        return redirect('score',score=score)
+    return redirect('job_desc')
+        
+def score_view(request,score):
+    return render(request,'score_gauge.html',{'score': score})
+
+
+def create_job(request):
+    if request.user == is_superuser:
+
