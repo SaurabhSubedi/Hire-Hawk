@@ -80,6 +80,10 @@ def score_view(request,score):
     return render(request,'score_gauge.html',{'score': score})
 
 
-def create_job(request):
+def admin_all_jobs(request):
     if request.user == is_superuser:
+        return render(request, )
+
+    else:
+        return redirect('login')
 

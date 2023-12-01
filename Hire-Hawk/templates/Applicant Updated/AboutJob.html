@@ -21,9 +21,12 @@
                 <li>{{job.skill2}}</li>
                 <li>{{job.skill3}}</li>
             </div>
-
-            <button id="fileInputButton">Upload Resume</button>
-            <input type="file" id="fileInput" accept=".docx, .pdf" style="display: none;">
+            <form method="post" action = {% url 'resume_upload'%} enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" id="fileInput" accept=".pdf,.docx" name="resume">
+            <input type="hidden" name="job_desc" value = {{job.id}}>
+            <button type="submit">Upload Resume</button>
+            </form>
         </div>
             
           
