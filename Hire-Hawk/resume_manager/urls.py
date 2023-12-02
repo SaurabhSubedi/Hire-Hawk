@@ -8,4 +8,6 @@ urlpatterns = [
     path("logout/",views.logout_view, name = 'logout'),
     path("resume_upload/",views.resume_upload, name = "resume_upload"),
     path("score_gauge/<int:score>/", views.score_view, name= "score"),
+    path("about/", views.about_view, name= "about"),
+    path("ContactUs/", views.contactus_view, name= "contactus"),
 ]

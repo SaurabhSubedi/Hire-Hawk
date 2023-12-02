@@ -25,7 +25,7 @@
             {% csrf_token %}
             <input type="file" id="fileInput" accept=".pdf,.docx" name="resume">
             <input type="hidden" name="job_desc" value = {{job.id}}>
-            <button type="submit">Upload Resume</button>
+            <button class="applynowbutton" type="submit">Apply Now</button>
             </form>
         </div>
             
@@ -150,7 +150,7 @@
             border: 1px solid;
         }
 
-        #fileInputButton {
+        .applynowbutton {
              border: 1px solid black;
              background-color: white;
              padding: 10px 20px;
@@ -158,7 +158,7 @@
              transition: background-color 0.3s;
         }
 
-        #fileInputButton:hover {
+        .applynowbutton:hover {
             background-color: #B467EF;
             color: white; /* Optional: Change text color on hover */
         }
@@ -296,7 +296,7 @@
     const selectedFile = this.files[0];
     if (selectedFile) {
       const fileName = selectedFile.name;
-      alert(`Selected file: ${fileName}`);
+      /* alert(`Selected file: ${fileName}`);  */
     }
 
   });

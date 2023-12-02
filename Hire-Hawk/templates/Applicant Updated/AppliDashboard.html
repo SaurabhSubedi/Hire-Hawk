@@ -16,8 +16,8 @@
     </div>
     <ul>
       <li><a href="#home">Home</a></li>
-      <li><a href="#about" target="_blank">About</a></li>
-      <li><a href="ContactUs.html" target="_blank">Contact</a></li>
+      <li><a href="{% url 'about' %}" target="_blank">About</a></li>
+      <li><a href="{% url 'contactus' %}" target="_blank">Contact</a></li>
       <li class="profile"><img src="{% static "image/profile-image.jpg" %}" alt="Profile Avatar"></li>
     </ul>
   </nav>
@@ -30,14 +30,14 @@
     <input type="file" id="fileInput" accept=".pdf" style="display: none;">
   </div>
 {% for job in jobs %}
-  <div class="content">
+  <div class="content" >
     <div class="text-content">
       <h2>{{job.title}}</h2>
       <p>
         {{job.brief_stat}}
       </p>
     </div>
-    <form method="post" action={% url 'job_desc'%}>
+    <form method="post" action={% url 'job_desc' %}>
       {% csrf_token %}
       <input type = "hidden" value = {{job.id}} name="job_id" ></input>
      <button id="fileInputButton" onclick="redirectToAboutJob()" type = "submit">

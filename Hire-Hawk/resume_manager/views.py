@@ -87,3 +87,10 @@ def admin_all_jobs(request):
     else:
         return redirect('login')
 
+
+def about_view(request):
+    return render(request, "About.html")
+
+def contactus_view(request):
+    return render(request, "ContactUs.html")
+
