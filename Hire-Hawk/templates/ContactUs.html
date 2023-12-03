@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load myfilter %}
+{% load static %}
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us -HireHawk</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -14,13 +17,13 @@
         <div class="logo-container">
           <!-- TODO -->
            <!-- Import the logo here. -->
-            <img src="" alt="HireHawk Logo">
+            <img src="{% static 'image/HireHawkLogo.png' %}" alt="HireHawk Logo" class="Logo">
         </div>
         <div class="contact-info">
             <p><strong>Phone:</strong> +977 9843468715</p>
             <p><strong>Email:</strong> 
               hirehawk@gmail.com
-              <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info@hirehawk.com</p>
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info@hirehawk.com</p>
             </p>
         </div>
     </div>
@@ -35,13 +38,19 @@
     background-color: #f5f5f5;
 }
 
+.Logo {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+
 .contact-container {
     max-width: 600px;
     margin: 50px auto;
-    background-color: #fff;
+    background-color: #66D1FF;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(233, 233, 233, 0.363);
 }
 
 .logo-container {

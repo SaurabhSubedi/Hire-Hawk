@@ -10,4 +10,5 @@ urlpatterns = [
     path("score_gauge/<int:score>/", views.score_view, name= "score"),
     path("about/", views.about_view, name= "about"),
     path("ContactUs/", views.contactus_view, name= "contactus"),
+    path("ProfilePage/", views.profile_view, name= "profile"),
 ]

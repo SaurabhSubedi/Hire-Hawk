@@ -94,3 +94,5 @@ def about_view(request):
 def contactus_view(request):
     return render(request, "ContactUs.html")
 
+def profile_view(request):
+    return render(request, "ProfilePage.html")

@@ -16,4 +16,8 @@ document.getElementById('fileInputButton').addEventListener('click', function() 
   function redirectToAboutJob() {
     window.location.href = 'AboutJob.html';
   }
+
+  function redirectToProfile() {
+    window.location.href = 'ProfilePage.html';
+  }
   
