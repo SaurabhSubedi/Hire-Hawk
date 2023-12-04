@@ -3,6 +3,7 @@ from .models import Job_description,Applicant
 from django.contrib.auth import login, logout,authenticate
 from django.contrib.auth.models import User
 from .self_cosine_sim import my_cosine_similarity,read_text
+from .utils import skill_extraction
 # Create your views here.
 
 def applicant_view(request):
@@ -18,7 +19,9 @@ def job_details_view(request):
         job_id = request.POST.get("job_id")
         job = Job_description.objects.get(id = job_id)
         applicant_number = job.applicant_count()
-        return render(request,'Applicant Updated/AboutJob.html',{'job': job,'appli_count': applicant_number})
+        text = job.requirement
+        skills = skill_extraction(text)
+        return render(request,'Applicant Updated/AboutJob.html',{'job': job,'appli_count': applicant_number, 'skills': skills})
 
 
 def login_view(request):
@@ -70,7 +73,8 @@ def resume_upload(request):
         job_requirement = job.requirement
         resume_text = read_text(new_appli.resume.path)
         score = my_cosine_similarity(job_requirement,resume_text)
-        print(score)
+        new_appli.rank = score
+        new_appli.save()
         score = score*100
         score = int(score)
         return redirect('score',score=score)

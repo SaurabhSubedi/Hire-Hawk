@@ -17,9 +17,9 @@
             <div class="job-info">{{job.created_at|timesince}} ago· {{appli_count}} applicants</div>
 
             <div class="skills-list">
-                <li>{{job.skill1}} </li>
-                <li>{{job.skill2}}</li>
-                <li>{{job.skill3}}</li>
+                {% for skill in skills %}
+                    <li>{{skill}}</li>
+                {% endfor %}
             </div>
             <form method="post" action = {% url 'resume_upload'%} enctype="multipart/form-data">
             {% csrf_token %}
