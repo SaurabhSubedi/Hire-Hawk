@@ -5,14 +5,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Posting</title>
+    <title>JobDetails -Recruiter's Side</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  
 </head>
 
 <body>
 
     <div class="container">
+
+        <!-- Rank Container  -->
+        <div class="rank-container">
+            <table>
+                <thead>
+                  <tr>
+                    <th>Rank</th>
+                    <th>Details</th>
+                    <th>Score</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Person i</td>
+                    <td>95</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Person ii</td>
+                    <td>89</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Person iii</td>
+                    <td>75</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+
+
+        <!-- Job Container  -->
+        <div class="container">
         <div class="job-container">
-            <div class="job-title">{{job.title}}</div>
+            <div class="job-title">
+                {{job.title}}
+                <a href="RecJobEditPage.html" class="pencil-icon">
+                    <i class="fas fa-pencil-alt"></i>
+                  </a>
+            </div>
             <div class="company-location">MoonShine Technologies · Kathmandu, Nepal</div>
             <div class="job-info">{{job.created_at|timesince}} ago· {{appli_count}} applicants</div>
 
@@ -21,18 +62,18 @@
                 <li>{{job.skill2}}</li>
                 <li>{{job.skill3}}</li>
             </div>
-            <form method="post" action = {% url 'resume_upload'%} enctype="multipart/form-data">
-            {% csrf_token %}
-            <input type="file" id="fileInput" accept=".pdf,.docx" name="resume">
-            <input type="hidden" name="job_desc" value = {{job.id}}>
-            <button class="applynowbutton" type="submit">Apply Now</button>
-            </form>
+            
         </div>
             
-          
-
+       
+        <!-- Details Container  -->
         <div class="job-section">
-            <div class="section-header">About the Job</div>
+            <div class="section-header">
+                About the Job
+                <a href="RecJobEditPage.html" class="pencil-icon">
+                    <i class="fas fa-pencil-alt"></i>
+                  </a>
+            </div>
             <div class="job-description">
                 <h4>Responsibilites:</h4>
                 <p>
@@ -55,6 +96,15 @@
                     </ul>
                 </p>
             </div>
+        </div>
+
+        
+        <!-- Dismiss Job Container  -->
+        <div class="Dismiss-section">
+            <button class="closeButton">
+                <div class="closeLogo">X</div>
+                <div>Dismiss Job</div>
+              </button>   
         </div>
     </div>
 
@@ -85,16 +135,29 @@
             border-bottom: 1px solid #ddd;
         }
 
+        .rank-container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+
         .section-header {
             font-size: 24px;
             font-weight: bold;
             margin-bottom: 10px;
+            justify-content: space-between;
         }
+
+        
 
         .job-title {
             font-size: 24px;
             font-weight: bold;
             margin-bottom: 10px;
+            justify-content: space-between;
         }
 
         .company-location {
@@ -163,21 +226,63 @@
             color: white; /* Optional: Change text color on hover */
         }
 
+        table {
+            width: 80%;
+            margin: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            border-collapse: collapse;
+        }
+
+        th, td {
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        padding: 15px;
+        }
+
+        th {
+        color: #fff;
+        background-color: #3498db7d;
+        }
+
+        tr:hover {
+        background-color: rgba(52, 152, 219, 0.2);
+        }
+
+        .Dismiss-section {
+      display: flex;
+      align-items: center;
+    }
+
+    .closeButton {
+      background-color: #B467EF;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+    }
+
+    .closeLogo {
+      font-size: 20px;
+      margin-right: 5px;
+    }
+
+    .pencil-icon {
+      color: black;
+      cursor: pointer;
+    }
+
+        
+
     </style>
 
     <script>
-        document.getElementById('fileInputButton').addEventListener('click', function() {
-    document.getElementById('fileInput').click();
-  });
-  
-  document.getElementById('fileInput').addEventListener('change', function() {
-    const selectedFile = this.files[0];
-    if (selectedFile) {
-      const fileName = selectedFile.name;
-    }
-
-  });
-
   
 
     </script>

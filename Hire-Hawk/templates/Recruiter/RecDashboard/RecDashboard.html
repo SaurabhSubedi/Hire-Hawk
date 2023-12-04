@@ -3,16 +3,190 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recruiter's Dashboard</title>
-  <link rel="stylesheet" href="RecDashboard.css">
+  <title>Recruiter's Dashboard -HireHawk</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"> <!-- Link to Poppins font -->
 </head>
 <body>
 
-  <div class="container">
-    <h2>Welcome to the Dashboard!</h2>
-    <p>Recruiter's Dashboard</p>
+
+  <nav>
+    <div class="logo">
+      <img src="{% static "image/HireHawkLogo.png"%}" alt="Logo">
+    </div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="{% url 'contactus' %}" target="_blank">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <div class="postedJobTitle">
+    <h2>Posted Jobs</h2>
   </div>
 
+
+{% for job in jobs %}
+  <div class="content" >
+    <div class="text-content">
+      <h2>{{job.title}}</h2>
+      
+    </div>
+    <form method="post" action={% url 'job_desc' %}>
+      {% csrf_token %}
+      <input type = "hidden" value = {{job.id}} name="job_id" ></input>
+     <button  class="seeApplicantButton">
+      See Applicants >>
+     </button>
+    </form>
+    <div class="selected-file" id="selectedFile1"></div>
+  </div>
+{% endfor %}
+
+
+
 </body>
+
+
+
+
+<style>
+  body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(to right, #131414, #3b3342);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo img {
+  max-height: 40px; 
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+nav .profile{
+  cursor: pointer;
+}
+
+nav .profile img {
+  border-radius: 50%;
+  max-height: 40px;
+  cursor: pointer;
+}
+
+.content {
+  margin-top: 12px; 
+  margin-left: 70px;
+  margin-right: 70px;
+  padding: 20px;
+  cursor: pointer;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
+  border: none;
+  box-shadow: 0 0 0 0.2px black;
+}
+
+.text-content {
+  margin-bottom: 10px; 
+}
+
+.text-content h2,
+.text-content p {
+  margin: 0;
+}
+
+
+button {
+  font-family: 'Poppins', sans-serif;
+  background-color: #B467EF;
+  color: black;
+  padding: 11px 30px;
+  border-radius: 23px;
+  cursor: pointer;
+  margin-left: auto; 
+  font-weight: 600;
+  border: 1px solid;
+}
+
+.seeApplicantButton {
+  border: 1px solid black;
+  background-color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.seeApplicantButton:hover {
+  background-color: #B467EF;
+  color: white; /* Optional: Change text color on hover */
+}
+
+
+.postedJobTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 26px;
+  position: relative;
+  text-align: center;
+}
+
+    .postedJobTitle h2 {
+      
+      display: inline-block;
+      position: relative;
+    }
+
+    .postedJobTitle h2::after {
+     
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 50%;
+      width: 50%;
+      border-bottom: 2px solid red; /* Change the color as needed */
+    }
+
+
+</style>
+
+
+
+
+
+
+<script>
+</script>
+
+
+
 </html>
