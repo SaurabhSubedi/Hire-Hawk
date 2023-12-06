@@ -6,11 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HireHawk Login</title>
   <link rel="stylesheet" href="{% static "css/loginstyle.css" %}">
+  <link rel="stylesheet" href = "{% static "css/bootstrap.css" %}">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-
   <img src="{% static "image/HireHawkLogo.png" %}" alt="HireHawkLogo" style="width: 100%; max-width: 300px; margin-bottom: 20px; padding-right: 70px;">
 
   <div class="container">
@@ -22,8 +21,6 @@
     <label for="password">Password</label>
     <input type="password" id="password" name="password" required>
 
-    <div id="error-message" class="error-message"></div>
-
     <button type="submit" onclick="validateLogin()">Login</button>
   </form>
 
@@ -32,6 +29,7 @@
 </div>
  
   <script src="RecLoginScript.js"></script>
+  <script src = "{% static "js/bootstrap.js" %}"></script>
 
 </body>
 </html>

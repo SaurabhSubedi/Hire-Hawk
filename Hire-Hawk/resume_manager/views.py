@@ -4,6 +4,7 @@ from django.contrib.auth import login, logout,authenticate
 from django.contrib.auth.models import User
 from .self_cosine_sim import my_cosine_similarity,read_text
 from .utils import skill_extraction
+from django.contrib import messages
 # Create your views here.
 
 def applicant_view(request):
@@ -41,6 +42,7 @@ def login_view(request):
                 return redirect('admin_dashboard')
             return redirect('appview')
         else:
+            messages.error(request,"Please enter valid credentials")
             return redirect('login')
     else:
         return render(request,'Recruiter/RecLogin.html')
@@ -124,9 +126,11 @@ def job_edit_save(request):
             job_id = request.POST.get("job_id")
             responsibilites = request.POST.get("responsibilities")
             requirements = request.POST.get("requirements")
+            salary = request.POST.get("salary")
             job = Job_description.objects.get(id= job_id)
             job.responsibility = responsibilites
             job.requirement = requirements
+            job.salary = salary
             job.save()
             return redirect("admin_dashboard")
 def about_view(request):
@@ -136,4 +140,4 @@ def contactus_view(request):
     return render(request, "ContactUs.html")
 
 def profile_view(request):
-    return render(request, "ProfilePage.html")
+    return render(request, "ProfiePage.html")

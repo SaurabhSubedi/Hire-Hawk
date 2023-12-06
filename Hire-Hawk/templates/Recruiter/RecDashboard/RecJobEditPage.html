@@ -40,6 +40,10 @@
           <textarea class="txtarea" name="responsibilities" placeholder="Enter responsibilities...">{% for sentence in job.responsibility|period_split  %}{% if sentence %}{{sentence}}.{% endif %}{% endfor %}</textarea>
           <h4>Requirements:</h4>
           <textarea class="txtarea" name="requirements" placeholder="Enter requirements...">{% for sentence in job.requirement|period_split %}{% if sentence %}{{sentence}}.{% endif %}{% endfor %}</textarea>
+          <h4>Salary:</h4>
+          <div class="job-title">
+            <input type="int" name="salary" placeholder="Salary" value="{{job.salary}}">
+          </div>
         </div>
       
     </div>

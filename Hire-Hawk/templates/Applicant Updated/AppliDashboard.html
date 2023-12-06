@@ -18,7 +18,7 @@
       <li><a href="#home">Home</a></li>
       <li><a href="{% url 'about' %}" target="_blank">About</a></li>
       <li><a href="{% url 'contactus' %}" target="_blank">Contact</a></li>
-      <li class="profile"><a href="{% url 'profile' %}"><img src="{% static "image/profile-image.jpg" %}" alt="ProfileAvatar"></a></li>
+      <li class="profile"><a href="{% static url 'profile' %}"><img src="{% static "image/profile-image.jpg" %}" alt="ProfileAvatar"></a></li>
     </ul>
   </nav>
 

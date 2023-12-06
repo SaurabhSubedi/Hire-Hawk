@@ -14,6 +14,7 @@
         <div class="job-container">
             <div class="job-title">{{job.title}}</div>
             <div class="company-location">MoonShine Technologies · Kathmandu, Nepal</div>
+            <div class="company-location">Salary · Rs.{{job.salary}}</div>
             <div class="job-info">{{job.created_at|timesince}} ago· {{appli_count}} applicants</div>
 
             <div class="skills-list">
@@ -23,7 +24,7 @@
             </div>
             <form method="post" action = {% url 'resume_upload'%} enctype="multipart/form-data">
             {% csrf_token %}
-            <input type="file" id="fileInput" accept=".pdf,.docx" name="resume">
+            <input type="file" id="fileInput" accept=".pdf,.docx" name="resume" required>
             <input type="hidden" name="job_desc" value = {{job.id}}>
             <button class="applynowbutton" type="submit">Apply Now</button>
             </form>

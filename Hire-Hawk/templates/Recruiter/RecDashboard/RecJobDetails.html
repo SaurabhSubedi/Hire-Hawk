@@ -42,12 +42,10 @@
         <div class="container">
         <div class="job-container">
             <div class="job-title">
-                {{job.title}}
-                <a href="RecJobEditPage.html" class="pencil-icon">
-                    <i class="fas fa-pencil-alt"></i>
-                  </a>
+                {{job.title}}  
             </div>
             <div class="company-location">MoonShine Technologies · Kathmandu, Nepal</div>
+            <div class="company-location">Salary · Rs.{{job.salary}}</div>
             <div class="job-info">{{job.created_at|timesince}} ago· {{appli_count}} applicants</div>
 
             <div class="skills-list">
@@ -63,9 +61,14 @@
         <div class="job-section">
             <div class="section-header">
                 About the Job
-                <a href="RecJobEditPage.html" class="pencil-icon">
-                    <i class="fas fa-pencil-alt"></i>
-                  </a>
+                <form method="post" action={% url 'admin_job_edit'%}>
+                    {% csrf_token %}
+                    <input type="hidden" value={{job.id}} name="job_id">
+                    <button type="submit">
+                        <i class="fas fa-pencil-alt"></i>   
+                    </button>
+                </form>
+                
             </div>
             <div class="job-description">
                 <h4>Responsibilites:</h4>
@@ -94,21 +97,12 @@
         
         <!-- Dismiss Job Container  -->
         <div class="Dismiss-section">
-            <button class="closeButton">
+            <button class="closeButton" id="closebutton">
                 <div class="closeLogo">X</div>
                 <div>Dismiss Job</div>
               </button>   
         </div>
-        <div class="Dismiss-section">
-        <form method="post" action={% url 'admin_job_edit'%}>
-            {% csrf_token %}
-            <input type="hidden" value={{job.id}} name="job_id">
-            <button class="closeButton" type="submit">
-                <div class="closeLogo">X</div>
-                <div>Edit Job</div>
-            </button>
-        </form>   
-        </div>
+        
     </div>
 
     <style>
@@ -203,7 +197,7 @@
             margin-bottom: 20px;
         }
 
-        button {
+        #closebutton {
             font-family: 'Poppins', sans-serif;
             background-color: #B467EF;
             color: black;
@@ -279,6 +273,9 @@
     .pencil-icon {
       color: black;
       cursor: pointer;
+    }
+    button{
+        border: none;
     }
 
         
