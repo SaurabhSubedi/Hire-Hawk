@@ -14,17 +14,21 @@ def applicant_view(request):
         return redirect('login')
         
 
+
 def job_details_view(request):
     if request.method == "POST":
         job_id = request.POST.get("job_id")
         job = Job_description.objects.get(id = job_id)
         applicant_number = job.applicant_count()
-        text = job.requirement
+        text = job.requirement.lower()
         skills = skill_extraction(text)
-        return render(request,'Applicant Updated/AboutJob.html',{'job': job,'appli_count': applicant_number, 'skills': skills})
+        cap_skills  = [x.upper() for x in skills ]
+        return render(request,'Applicant Updated/AboutJob.html',{'job': job,'appli_count': applicant_number, 'skills': cap_skills})
 
 
 def login_view(request):
+    if request.user.is_superuser:
+        return redirect('admin_dashboard')
     if request.user.is_authenticated:
         return redirect('appview')
     if request.method == "POST":
@@ -33,6 +37,8 @@ def login_view(request):
         user = authenticate(request,username=email,password = password)
         if user is not None:
             login(request,user)
+            if user.is_superuser:
+                return redirect('admin_dashboard')
             return redirect('appview')
         else:
             return redirect('login')
@@ -85,13 +91,44 @@ def score_view(request,score):
 
 
 def admin_all_jobs(request):
-    if request.user == is_superuser:
-        return render(request, )
-
+    if request.user.is_superuser:
+        all_jobs = Job_description.objects.all()
+        return render(request,'Recruiter/RecDashboard/RecDashboard.html',{'jobs': all_jobs})
     else:
         return redirect('login')
 
+def admin_job_desc(request):
+    if request.user.is_superuser:
+        if request.method == "POST":
+            job_id = request.POST.get("job_id")
+            job = Job_description.objects.get(id = job_id)
+            applicant_number = job.applicant_count()
+            all_applicants = Applicant.objects.filter(job_description=job).order_by('-rank')
+            count_applicants = min(3,all_applicants.count())
+            top_applicants = all_applicants[:count_applicants]
+            text = job.requirement.lower()
+            skills = skill_extraction(text)
+            cap_skills = [x.capitalize() for x in skills]
+            return render(request,'Recruiter/RecDashboard/RecJobDetails.html',{'job': job,'appli_count': applicant_number, 'skills': cap_skills,'applicants':top_applicants})
 
+def admin_job_edit(request):
+    if request.user.is_superuser:
+        if request.method == "POST":
+            job_id = request.POST.get("job_id")
+            job = Job_description.objects.get(id = job_id)
+            return render(request,'Recruiter/RecDashboard/RecJobEditPage.html',{'job': job})
+
+def job_edit_save(request):
+    if request.user.is_superuser:
+        if request.method == "POST":
+            job_id = request.POST.get("job_id")
+            responsibilites = request.POST.get("responsibilities")
+            requirements = request.POST.get("requirements")
+            job = Job_description.objects.get(id= job_id)
+            job.responsibility = responsibilites
+            job.requirement = requirements
+            job.save()
+            return redirect("admin_dashboard")
 def about_view(request):
     return render(request, "About.html")
 

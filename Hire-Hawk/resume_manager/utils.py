@@ -3,7 +3,7 @@ import os
 
 def skill_extraction(text):
     current_dir = os.path.dirname(os.path.abspath(__file__))
-    patterns_path = os.path.join(current_dir, 'patterns.jsonl')
+    patterns_path = os.path.join(current_dir, 'patterns1.jsonl')
     nlp = spacy.load("en_core_web_sm")
     ruler = nlp.add_pipe("entity_ruler", before="ner")
     ruler.from_disk(patterns_path)

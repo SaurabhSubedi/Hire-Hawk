@@ -20,26 +20,19 @@
                 <thead>
                   <tr>
                     <th>Rank</th>
-                    <th>Details</th>
+                    <th>Email</th>
                     <th>Score</th>
                   </tr>
                 </thead>
                 <tbody>
+                  {% for applicant in applicants %}
                   <tr>
-                    <td>1</td>
-                    <td>Person i</td>
-                    <td>95</td>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{applicant.user.email}}</td>
+                    <td>{{applicant.rank|floatformat:3}}</td>
                   </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Person ii</td>
-                    <td>89</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Person iii</td>
-                    <td>75</td>
-                  </tr>
+                  {% endfor %}
+                
                 </tbody>
               </table>
         </div>
@@ -58,9 +51,9 @@
             <div class="job-info">{{job.created_at|timesince}} ago· {{appli_count}} applicants</div>
 
             <div class="skills-list">
-                <li>{{job.skill1}} </li>
-                <li>{{job.skill2}}</li>
-                <li>{{job.skill3}}</li>
+                {% for skill in skills %}
+                <li>{{skill}}</li>
+                {% endfor %}
             </div>
             
         </div>
@@ -105,6 +98,16 @@
                 <div class="closeLogo">X</div>
                 <div>Dismiss Job</div>
               </button>   
+        </div>
+        <div class="Dismiss-section">
+        <form method="post" action={% url 'admin_job_edit'%}>
+            {% csrf_token %}
+            <input type="hidden" value={{job.id}} name="job_id">
+            <button class="closeButton" type="submit">
+                <div class="closeLogo">X</div>
+                <div>Edit Job</div>
+            </button>
+        </form>   
         </div>
     </div>
 

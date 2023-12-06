@@ -1,0 +1,605 @@
+{"label":"PROGRAMMING_LANGUAGE","pattern":"javascript","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"css","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"html","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"shell","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"python","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"ruby","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"java","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"php","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"c","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"c++","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"makefile","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"objective-c","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"c#","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"perl","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"batchfile","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"go","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"apacheconf","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"coffeescript","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"cmake","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"assembly","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"typescript","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"swift","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"scala","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"lua","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"asp","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"powershell","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"xslt","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"tex","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"haskell","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"r","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"groovy","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"clojure","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"groff","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"dockerfile","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"arduino","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"awk","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"viml","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"objective-c++","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"matlab","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"qmake","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"smarty","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"jupyter notebook","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"emacs lisp","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"m4","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"rust","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"puppet","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"erlang","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"glsl","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"yacc","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"scilab","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"lex","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"protocol buffer","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"roff","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"prolog","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"vim script","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"visual basic","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"pascal","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"unrealscript","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"plpgsql","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"sourcepawn","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"actionscript","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"nginx","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"vue","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"nsis","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"tcl","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"cucumber","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"kotlin","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"d","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"scheme","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"plsql","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"handlebars","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"elixir","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"processing","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"f#","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"julia","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"common lisp","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"dart","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"smalltalk","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"ocaml","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"sqlpl","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"perl6","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"idl","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"qml","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"m","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"gherkin","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"logos","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"tsql","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"cuda","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"mako","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"postscript","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"applescript","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"gap","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"digital command language","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"racket","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"fortran","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"supercollider","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"inno setup","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"bison","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"freemarker","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"thrift","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"haxe","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"gnuplot","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"hack","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"verilog","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"dot","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"hcl","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"elm","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"antlr","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"fortran","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"xml","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"mathematica","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"matlab","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"openedge abl","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"gdb","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"nix","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"standard ml","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"livescript","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"perl 6","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"ada","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"scss","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"eagle","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"vhdl","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"coldfusion","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"dtrace","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"vala","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"xs","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"forth","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"openscad","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"saltstack","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"rebol","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"hlsl","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"autohotkey","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"sas","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"llvm","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"module management system","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"crystal","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"shaderlab","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"xquery","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"kicad","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"systemverilog","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"max","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"coq","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"bitbake","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"stata","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"liquid","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"clips","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"meson","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"sed","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"ec","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"pure data","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"ragel in ruby host","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"starlark","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"rich text format","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"gcc machine description","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"flux","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"ampl","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"xtend","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"brainfuck","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"purescript","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"api blueprint","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"newlisp","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"aspectj","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"apex","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"eiffel","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"ags script","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"cobol","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"cap'n proto","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"gdscript","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"autoit","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"mercury","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"gettext catalog","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"web ontology language","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"sql","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"purebasic","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"io","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"sqf","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"nimrod","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"less","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"piglatin","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"mask","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"diff","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"gosu","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"modelica","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"pawn","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"robotframework","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"blitzbasic","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"raml","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"arc","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"nim","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"nesc","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"emberscript","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"pov-ray sdl","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"abap","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"xc","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"lasso","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"squirrel","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"game maker language","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"vcl","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"jsoniq","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"slash","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"vim snippet","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"renderscript","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"lsl","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"dm","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"nu","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"moonscript","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"raku","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"limbo","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"volt","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"labview","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"xbase","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"swig","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"jinja","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"cartocss","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"objective-j","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"maxscript","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"angelscript","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"e","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"ragel","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"idris","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"lilypond","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"cirru","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"augeas","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"pawn","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"nemerle","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"clarion","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"1c enterprise","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"clean","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"lean","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"yasnippet","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"mustache","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"vbscript","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"metal","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"boo","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"delphi","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"visual basic .net","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"xproc","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"smali","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"jasmin","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"agda","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"terra","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"twig","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"ejs","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"vba","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"hy","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"lookml","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"ceylon","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"srecode template","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"turing","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"cython","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"frege","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"jsonnet","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"rpc","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"q","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"netlogo","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"stan","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"webassembly","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"bro","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"pan","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"j","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"smt","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"pug","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"isabelle","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"zephir","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"nasl","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"component pascal","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"propeller spin","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"click","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"ooc","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"hiveql","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"webidl","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"parrot","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"dylan","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"monkey","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"sass","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"genshi","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"modula-2","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"fancy","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"factor","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"rascal","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"redcode","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"lolcode","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"pike","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"haml","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"smpl","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"brightscript","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"chuck","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"picolisp","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"apl","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"stylus","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"red","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"g-code","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"alloy","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"asp.net","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"csound document","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"harbour","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"igor pro","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"papyrus","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"pony","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"tla","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"blade","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"oz","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"mupad","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"urweb","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"kit","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"xojo","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"common workflow language","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"cycript","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"graphviz (dot)","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"kicad layout","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"ncl","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"hyphy","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"csound","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"inform 7","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"rexx","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"slim","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"csound score","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"cool","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"opa","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"myghty","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"chapel","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"nextflow","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"logtalk","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"blitzmax","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"gams","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"ren'py","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"bluespec","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"ats","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"mirah","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"nunjucks","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"cweb","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"ioke","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"yara","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"jflex","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"fantom","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"p4","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"solidity","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"grammatical framework","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"zimpl","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"uno","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"mql4","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"v","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"mql5","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"sage","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"mirc script","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"oxygene","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"xpages","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"pep8","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"nearley","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"dcpu-16 asm","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"f*","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"golo","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"krl","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"aidl","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"fluent","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"self","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"nit","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"peg.js","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"mlir","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"dogescript","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"ecl","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"wdl","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"dhall","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"netlinx","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"wisp","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"basic","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"rescript","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"ballerina","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"txl","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"open policy agent","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"moocode","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"ecl","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"faust","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"codeql","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"ox","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"svelte","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"filebench wml","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"asymptote","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"x10","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"shellsession","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"reason","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"riot","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"realbasic","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"modula-3","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"powerbuilder","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"slice","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"closure templates","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"jq","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"shen","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"genie","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"classic asp","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"grace","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"zeek","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"tea","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"jolie","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"asl","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"stringtemplate","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"lfe","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"eq","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"rouge","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"mtml","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"zig","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"objectscript","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"pogoscript","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"qt script","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"freebasic","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"glyph","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"opal","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"charity","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"dataweave","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"markdown","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"omgrofl","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"ti program","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"yaml","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"runoff","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"loomscript","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"befunge","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"holyc","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"zenscript","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"bicep","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"odin","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"xonsh","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"singularity","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"imagej macro","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"sieve","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"openqasm","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"earthly","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"netlinx+erb","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"al","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"cue","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"fennel","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"kaitai struct","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"gaml","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"json","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"ring","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"latte","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"scaml","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"cson","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"zap","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"promela","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"marko","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"macaulay2","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"wollok","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"astro","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"futhark","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"kicad schematic","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"kakounescript","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"ini","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"beef","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"org","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"q#","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"motoko","id":"SKILLS"}
+{"label":"PROGRAMMING_LANGUAGE","pattern":"boogie","id":"SKILLS"}
+{"label":"Database","pattern":"mysql","id":"SKILLS"}
+{"label":"Database","pattern":"postgresql","id":"SKILLS"}
+{"label":"Database","pattern":"sqlite","id":"SKILLS"}
+{"label":"Database","pattern":"mongodb","id":"SKILLS"}
+{"label":"Database","pattern":"microsoft sql server","id":"SKILLS"}
+{"label":"Database","pattern":"oracle database","id":"SKILLS"}
+{"label":"Database","pattern":"mariadb","id":"SKILLS"}
+{"label":"Database","pattern":"couchdb","id":"SKILLS"}
+{"label":"Database","pattern":"cassandra","id":"SKILLS"}
+{"label":"Database","pattern":"redis","id":"SKILLS"}
+{"label":"Database","pattern":"firebase","id":"SKILLS"}
+{"label":"Database","pattern":"amazon dynamodb","id":"SKILLS"}
+{"label":"Database","pattern":"neo4j","id":"SKILLS"}
+{"label":"Database","pattern":"couchbase","id":"SKILLS"}
+{"label":"Database","pattern":"rethinkdb","id":"SKILLS"}
+{"label":"Database","pattern":"influxdb","id":"SKILLS"}
+{"label":"Database","pattern":"hbase","id":"SKILLS"}
+{"label":"Database","pattern":"amazon aurora","id":"SKILLS"}
+{"label":"Database","pattern":"microsoft access","id":"SKILLS"}
+{"label":"Database","pattern":"teradata","id":"SKILLS"}
+{"label":"Database","pattern":"db2","id":"SKILLS"}
+{"label":"Database","pattern":"sybase","id":"SKILLS"}
+{"label":"Database","pattern":"firebase realtime database","id":"SKILLS"}
+{"label":"Database","pattern":"amazon simpledb","id":"SKILLS"}
+{"label":"Database","pattern":"arangodb","id":"SKILLS"}
+{"label":"Database","pattern":"memcached","id":"SKILLS"}
+{"label":"Database","pattern":"ravendb","id":"SKILLS"}
+{"label":"Database","pattern":"cockroachdb","id":"SKILLS"}
+{"label":"Database","pattern":"amazon redshift","id":"SKILLS"}
+{"label":"Database","pattern":"amazon neptune","id":"SKILLS"}
+{"label":"Database","pattern":"google cloud spanner","id":"SKILLS"}
+{"label":"Database","pattern":"amazon documentdb","id":"SKILLS"}
+{"label":"Database","pattern":"marklogic","id":"SKILLS"}
+{"label":"Database","pattern":"pouchdb","id":"SKILLS"}
+{"label":"Database","pattern":"elasticsearch","id":"SKILLS"}
+{"label":"Database","pattern":"faunadb","id":"SKILLS"}
+{"label":"Database","pattern":"timescaledb","id":"SKILLS"}
+{"label":"Database","pattern":"cosmos db","id":"SKILLS"}
+{"label":"Database","pattern":"google cloud firestore","id":"SKILLS"}
+{"label":"Database","pattern":"aerospike","id":"SKILLS"}
+{"label":"Database","pattern":"realm","id":"SKILLS"}
+{"label":"Database","pattern":"percona server for mongodb","id":"SKILLS"}
+{"label":"Database","pattern":"google cloud bigtable","id":"SKILLS"}
+{"label":"Database","pattern":"exasol","id":"SKILLS"}
+{"label":"Database","pattern":"sqlite","id":"SKILLS"}
+{"label":"Database","pattern":"sqlcipher","id":"SKILLS"}
+{"label":"Database","pattern":"voltdb","id":"SKILLS"}
+{"label":"Database","pattern":"mariadb galera cluster","id":"SKILLS"}
+{"label":"Database","pattern":"foundationdb","id":"SKILLS"}
+{"label":"Database","pattern":"tidb","id":"SKILLS"}
+{"label":"Database","pattern":"rocksdb","id":"SKILLS"}
+{"label":"Database","pattern":"greenplum","id":"SKILLS"}
+{"label":"Database","pattern":"monetdb","id":"SKILLS"}
+{"label":"Database","pattern":"amazon timestream","id":"SKILLS"}
+{"label":"Database","pattern":"arcticdb","id":"SKILLS"}
+{"label":"Database","pattern":"nuodb","id":"SKILLS"}
+{"label":"Database","pattern":"kdb+","id":"SKILLS"}
+{"label":"Database","pattern":"google cloud memorystore","id":"SKILLS"}
+{"label":"Database","pattern":"apache derby","id":"SKILLS"}
+{"label":"Database","pattern":"snowflake","id":"SKILLS"}
+{"label":"Database","pattern":"clustrixdb","id":"SKILLS"}
+{"label":"Database","pattern":"aurora serverless","id":"SKILLS"}
+{"label":"Database","pattern":"tikv","id":"SKILLS"}
+{"label":"Database","pattern":"amazon qldb","id":"SKILLS"}
+{"label":"Database","pattern":"terminusdb","id":"SKILLS"}
+{"label":"Database","pattern":"janusgraph","id":"SKILLS"}
+{"label":"Database","pattern":"amazon keyspaces (for apache cassandra)","id":"SKILLS"}
+{"label":"Database","pattern":"amazon managed blockchain","id":"SKILLS"}
+{"label":"Database","pattern":"oracle nosql database","id":"SKILLS"}
+{"label":"Database","pattern":"arangodb oasis","id":"SKILLS"}
+{"label":"Database","pattern":"amazon documentdb with mongodb compatibility","id":"SKILLS"}
+{"label":"Database","pattern":"yugabytedb","id":"SKILLS"}
+{"label":"Database","pattern":"amazon finspace","id":"SKILLS"}
+{"label":"Database","pattern":"starcounter","id":"SKILLS"}
+{"label":"Database","pattern":"babylondb","id":"SKILLS"}
+{"label":"Database","pattern":"fauna","id":"SKILLS"}
+{"label":"Database","pattern":"amazon aurora serverless v2","id":"SKILLS"}
+{"label":"Database","pattern":"orientdb","id":"SKILLS"}
+{"label":"Frameworks","pattern":"meteorjs","id":"SKILLS"}
+{"label":"Frameworks","pattern":"react native","id":"SKILLS"}
+{"label":"Frameworks","pattern":"vue","id":"SKILLS"}
+{"label":"Frameworks","pattern":"gatsby","id":"SKILLS"}
+{"label":"Frameworks","pattern":"jquery mobile","id":"SKILLS"}
+{"label":"Frameworks","pattern":"nativescript","id":"SKILLS"}
+{"label":"Frameworks","pattern":"nuxt.js","id":"SKILLS"}
+{"label":"Frameworks","pattern":"phoenix","id":"SKILLS"}
+{"label":"Frameworks","pattern":"aeron","id":"SKILLS"}
+{"label":"Frameworks","pattern":"apache mxnet","id":"SKILLS"}
+{"label":"Frameworks","pattern":"tensorflow","id":"SKILLS"}
+{"label":"Frameworks","pattern":"core data","id":"SKILLS"}
+{"label":"Frameworks","pattern":"xamarin","id":"SKILLS"}
+{"label":"Frameworks","pattern":"ml.net","id":"SKILLS"}
+{"label":"Frameworks","pattern":"infer.net","id":"SKILLS"}
+{"label":"Frameworks","pattern":"express (node.js)","id":"SKILLS"}
+{"label":"Frameworks","pattern":"grails (groovy)","id":"SKILLS"}
+{"label":"Frameworks","pattern":"yesod (haskell)","id":"SKILLS"}
+{"label":"Frameworks","pattern":"caliburn micro (csharp)","id":"SKILLS"}
+{"label":"Frameworks","pattern":"pidgin (csharp)","id":"SKILLS"}
+{"label":"Frameworks","pattern":"framework 7 (html5)","id":"SKILLS"}
+{"label":"Frameworks","pattern":"kendo ui (html5)","id":"SKILLS"}
+{"label":"Frameworks","pattern":"flutter (dart)","id":"SKILLS"}
+{"label":"Frameworks","pattern":"ionic (html, css, and javascript)","id":"SKILLS"}
+{"label":"Frameworks","pattern":"aurelia","id":"SKILLS"}
+{"label":"Frameworks","pattern":"polymer","id":"SKILLS"}
+{"label":"Frameworks","pattern":"knockoutjs","id":"SKILLS"}
+{"label":"Frameworks","pattern":"backbone.js","id":"SKILLS"}
+{"label":"Frameworks","pattern":"canjs","id":"SKILLS"}
+{"label":"Frameworks","pattern":"ember.js","id":"SKILLS"}
+{"label":"Frameworks","pattern":"mithril","id":"SKILLS"}
+{"label":"Frameworks","pattern":"svelte","id":"SKILLS"}
+{"label":"Frameworks","pattern":"next.js","id":"SKILLS"}
+{"label":"Frameworks","pattern":"nestjs","id":"SKILLS"}
+{"label":"Frameworks","pattern":"loopback","id":"SKILLS"}
+{"label":"Frameworks","pattern":"feathers","id":"SKILLS"}
+{"label":"Frameworks","pattern":"adonisjs","id":"SKILLS"}
+{"label":"Frameworks","pattern":"rails","id":"SKILLS"}
+{"label":"Frameworks","pattern":"sinatra","id":"SKILLS"}
+{"label":"Frameworks","pattern":"hanami","id":"SKILLS"}
+{"label":"Frameworks","pattern":"padrino","id":"SKILLS"}
+{"label":"Frameworks","pattern":"express.js","id":"SKILLS"}
+{"label":"Frameworks","pattern":"koa","id":"SKILLS"}
+{"label":"Frameworks","pattern":"sails.js","id":"SKILLS"}
+{"label":"Frameworks","pattern":"fastify","id":"SKILLS"}
+{"label":"Frameworks","pattern":"struts","id":"SKILLS"}
+{"label":"Frameworks","pattern":"jsf (javaserver faces)","id":"SKILLS"}
+{"label":"Frameworks","pattern":"vaadin","id":"SKILLS"}
+{"label":"Frameworks","pattern":"tapestry","id":"SKILLS"}
+{"label":"Frameworks","pattern":"django","id":"SKILLS"}
+{"label":"Frameworks","pattern":"flask","id":"SKILLS"}
+{"label":"Frameworks","pattern":"turbogears","id":"SKILLS"}
+{"label":"Frameworks","pattern":"pytorch","id":"SKILLS"}
+{"label":"Frameworks","pattern":"ruby on rails","id":"SKILLS"}
+{"label":"Frameworks","pattern":"garden","id":"SKILLS"}
+{"label":"Frameworks","pattern":"spring","id":"SKILLS"}
+{"label":"Frameworks","pattern":"play","id":"SKILLS"}
+{"label":"Frameworks","pattern":"spark","id":"SKILLS"}
+{"label":"Frameworks","pattern":"wicket","id":"SKILLS"}
+{"label":"Frameworks","pattern":"javalin","id":"SKILLS"}
+{"label":"Frameworks","pattern":"netty","id":"SKILLS"}
+{"label":"Frameworks","pattern":"reactor","id":"SKILLS"}
+{"label":"Frameworks","pattern":"neural network libraries","id":"SKILLS"}
+{"label":"Frameworks","pattern":"laravel","id":"SKILLS"}
+{"label":"Frameworks","pattern":"cakephp","id":"SKILLS"}
+{"label":"Frameworks","pattern":"symfony","id":"SKILLS"}
+{"label":"Frameworks","pattern":"phalcon","id":"SKILLS"}
+{"label":"Frameworks","pattern":"yii","id":"SKILLS"}
+{"label":"Frameworks","pattern":"zikula","id":"SKILLS"}
+{"label":"Frameworks","pattern":"lumen","id":"SKILLS"}
+{"label":"Frameworks","pattern":"codeigniter","id":"SKILLS"}
+{"label":"Frameworks","pattern":"reactjs","id":"SKILLS"}
+{"label":"Frameworks","pattern":"angularjs","id":"SKILLS"}
+{"label":"Frameworks","pattern":"emberjs","id":"SKILLS"}

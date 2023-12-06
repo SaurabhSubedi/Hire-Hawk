@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load myfilter %}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -22,39 +23,36 @@
         <div class="company-location">MoonShine Technologies · Kathmandu, Nepal</div>
             <div class="job-info">{{job.created_at|timesince}} ago· {{appli_count}} applicants</div>
 
-            <div class="skills-list">
-                <li>{{job.skill1}} </li>
-                <li>{{job.skill2}}</li>
-                <li>{{job.skill3}}</li>
-            </div>
           
       </form>
     </div>
 
     <!-- Details Container  -->
     <div class="job-section">
-      <form action="process_form.php" method="post">
+<form action="{% url 'job_edit_save' %}" method="post">
+        {% csrf_token %}
         <div class="section-header">
           About the Job
         </div>
+        <input type="hidden" value = {{job.id}} name="job_id">
         <div class="job-description">
           <h4>Responsibilities:</h4>
-          <textarea class="txtarea" name="responsibilities" placeholder="Enter responsibilities...">{% for sentence in job.responsibility|period_split %}{% if sentence %}{{sentence}}.{% endif %}{% endfor %}</textarea>
+          <textarea class="txtarea" name="responsibilities" placeholder="Enter responsibilities...">{% for sentence in job.responsibility|period_split  %}{% if sentence %}{{sentence}}.{% endif %}{% endfor %}</textarea>
           <h4>Requirements:</h4>
           <textarea class="txtarea" name="requirements" placeholder="Enter requirements...">{% for sentence in job.requirement|period_split %}{% if sentence %}{{sentence}}.{% endif %}{% endfor %}</textarea>
         </div>
-      </form>
+      
     </div>
 
     <!-- Dismiss Job Container  -->
     <div class="Dismiss-section">
-      <button class="closeButton">
+      <button class="closeButton" type="submit">
         <div class="closeLogo">&check;</div>
         <div>Save Changes</div>
       </button>
     </div>
   </div>
-
+</form>
   <style>
     body {
         font-family: Arial, sans-serif;
