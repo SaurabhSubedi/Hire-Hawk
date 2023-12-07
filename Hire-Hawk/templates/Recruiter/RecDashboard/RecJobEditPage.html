@@ -18,11 +18,14 @@
     <div class="job-container">
       <form action="process_form.php" method="post">
         <div class="job-title">
+          <h5>Job Title :</h5>
           <input type="text" name="job_title" placeholder="Job Title" value="{{job.title}}">
         </div>
-        <div class="company-location">MoonShine Technologies · Kathmandu, Nepal</div>
-            <div class="job-info">{{job.created_at|timesince}} ago· {{appli_count}} applicants</div>
-
+        <div class="job-description">
+          <h5>Salary :</h5>
+          <input type="int" name="salary" placeholder="Salary" value="{{job.salary}}">
+        </div>
+    
           
       </form>
     </div>
@@ -40,10 +43,6 @@
           <textarea class="txtarea" name="responsibilities" placeholder="Enter responsibilities...">{% for sentence in job.responsibility|period_split  %}{% if sentence %}{{sentence}}.{% endif %}{% endfor %}</textarea>
           <h4>Requirements:</h4>
           <textarea class="txtarea" name="requirements" placeholder="Enter requirements...">{% for sentence in job.requirement|period_split %}{% if sentence %}{{sentence}}.{% endif %}{% endfor %}</textarea>
-          <h4>Salary:</h4>
-          <div class="job-title">
-            <input type="int" name="salary" placeholder="Salary" value="{{job.salary}}">
-          </div>
         </div>
       
     </div>
@@ -171,6 +170,22 @@
         margin-bottom: 20px;
     }
 
+    .job-description h5{
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 20px;
+        display: inline;
+    }
+
+    .job-title h5{
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 20px;
+        display: inline;
+    }
+
+
+
     button {
         font-family: 'Poppins', sans-serif;
         background-color: #B467EF;
@@ -247,6 +262,10 @@
 .pencil-icon {
   color: black;
   cursor: pointer;
+}
+
+textarea{
+  border-radius: 10px;
 }
 
     

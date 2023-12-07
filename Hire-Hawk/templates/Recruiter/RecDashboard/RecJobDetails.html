@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JobDetails -Recruiter's Side</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"> <!-- Link to Poppins font -->
+
 </head>
 
 <body>
@@ -64,8 +65,9 @@
                 <form method="post" action={% url 'admin_job_edit'%}>
                     {% csrf_token %}
                     <input type="hidden" value={{job.id}} name="job_id">
-                    <button type="submit">
-                        <i class="fas fa-pencil-alt"></i>   
+                    <button type="submit" class="edit-button">
+                        <i class="fas fa-edit"></i>
+                        <span class="edittxt">Edit</span>   
                     </button>
                 </form>
                 
@@ -95,6 +97,14 @@
         </div>
 
         
+        <!-- Delete Job Container  -->
+        <div class="Delete-section">
+            <button class="DcloseButton" id="Dclosebutton">
+                <i class="fas fa-trash DcloseLogo"></i>
+                <div>Delete Job</div>
+              </button>   
+        </div>
+
         <!-- Dismiss Job Container  -->
         <div class="Dismiss-section">
             <button class="closeButton" id="closebutton">
@@ -107,10 +117,15 @@
 
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Poppins, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+        }
+
+        .edittxt{
+            align-items: center;
+            text-align: center;
         }
 
         .container {
@@ -197,18 +212,6 @@
             margin-bottom: 20px;
         }
 
-        #closebutton {
-            font-family: 'Poppins', sans-serif;
-            background-color: #B467EF;
-            color: black;
-            padding: 11px 30px;
-            /* border: none; */
-            border-radius: 13px;
-            cursor: pointer;
-            margin-left: auto; 
-            font-weight: 600;
-            border: 1px solid;
-        }
 
         .applynowbutton {
              border: 1px solid black;
@@ -240,7 +243,7 @@
         }
 
         th {
-        color: #fff;
+        color: black;
         background-color: #3498db7d;
         }
 
@@ -248,34 +251,96 @@
         background-color: rgba(52, 152, 219, 0.2);
         }
 
-        .Dismiss-section {
+      
+    /* Delete Btn */
+    .Delete-section {
+      /* display: flex; */
+      align-items: center;
+      display: inline-block; 
+      vertical-align: top; 
+      margin-right: 150px;
+    }
+
+    .DcloseButton {
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 13px;
       display: flex;
       align-items: center;
+      font-family: 'Poppins', sans-serif;
+      background-color: white;
+      color: black;
+      padding: 11px 30px;
+      margin-right: auto; 
+      font-weight: 600;
+      border: 1px solid;
+    }
+
+    .DcloseLogo {
+      font-size: 12px;
+      margin-right: 5px;
+      padding-right: 5px;
+    }
+
+    .DcloseButton:hover {
+      border: 1px solid;
+      color: white;
+      background-color: red;
+    }
+
+    
+    /* Dismiss Btn */
+    .Dismiss-section {
+      display: inline-block;
+      align-items: center;
+      vertical-align: top; 
+      margin-left: 150px;
     }
 
     .closeButton {
-      background-color: #B467EF;
-      color: #fff;
-      border: none;
+      background-color: white;
+      color: black;
+      border: 1px solid;
       padding: 10px 15px;
       font-size: 14px;
       cursor: pointer;
-      border-radius: 5px;
+      border-radius: 13px;
       display: flex;
       align-items: center;
+      font-family: 'Poppins', sans-serif;
+      margin-left: auto; 
+      font-weight: 600;
+    }
+
+    .closeButton:hover {
+      border: 1px solid;
+      background-color: #B467EF;
+      color: white;
     }
 
     .closeLogo {
-      font-size: 20px;
+      font-size: 16px;
       margin-right: 5px;
     }
+    /* -------------------- */
+
 
     .pencil-icon {
       color: black;
       cursor: pointer;
     }
-    button{
+
+    .edit-button{
+        margin-left: 95%;
+        background: none;
         border: none;
+        cursor: pointer;
+    }
+
+    .edit-button i {
+        float: top;
+        color: #333;
+        font-size: 16px;
     }
 
         

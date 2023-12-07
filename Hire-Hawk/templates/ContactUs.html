@@ -12,6 +12,26 @@
 </head>
 
 <body>
+    <nav>
+        <div class="logo">
+          <img src="{% static "image/HireHawkLogo.png"%}" alt="Logo">
+        </div>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="{% url 'contactus' %}" class="thispage">Contact</a></li>
+          <li class="nav-item profile" id="profileImage" onclick="showPopup()">
+            <img src="{% static "image/profile-image.jpg" %}" alt="Profile Avatar">
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Logout Dialog -->
+<div id="popup" class="popup">
+    <button onclick="logout()" class="logoutbtn">Logout</button>
+    <button onclick="closePopup()" >Cancel</button>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <div class="contact-container">
         <div class="logo-container">
@@ -46,8 +66,8 @@
 
 .contact-container {
     max-width: 600px;
-    margin: 50px auto;
-    background-color: #66D1FF;
+    margin: 80px auto;
+    background-color: #9fe2ff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(233, 233, 233, 0.363);
@@ -77,6 +97,129 @@
     display: inline-block;
 }
 
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(to right, #131414, #3b3342);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo img {
+  max-height: 40px; 
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+nav .profile{
+  cursor: pointer;
+}
+
+nav .profile img {
+  border-radius: 50%;
+  max-height: 40px;
+  cursor: pointer;
+}
+
+
+.thispage{
+      display: inline-block;
+      position: relative;
+   }
+
+   .thispage::after {
+     
+     content: "";
+     display: block;
+     position: absolute;
+     bottom: 0;
+     right: 0;
+     height: 50%;
+     width: 50%;
+     border-bottom: 2px solid red; /* Change the color as needed */
+   }
+
+   /* Popup styling */
+.popup {
+  display: none;
+  position: absolute;
+  background: #fff;
+  border-radius: 7px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup button {
+  margin: 6%;
+  /* margin-left: 10px; */
+  font-family: 'Poppins', sans-serif;
+  color: black;
+  border-radius: 7px;
+  margin-left: auto; 
+  font-weight: 600;
+  border: 1px solid black;
+  background-color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.popup button:hover {
+  background-color: #B467EF;
+  color: white; /* Optional: Change text color on hover */
+}
+
+.popup .logoutbtn:hover {
+  background-color: red;
+  color: white; 
+}
+
 </style>
+
+
+<script>
+    // Add the following code to your scripts.js file
+  function showPopup() {
+    $("#popup").css({
+      top: $("#profileImage").offset().top + $("#profileImage").outerHeight(),
+      left: $("#profileImage").offset().left - 60
+    }).show();
+  }
+  
+  function closePopup() {
+    $("#popup").hide();
+  }
+  
+  function logout() {
+    // TODO : Add Logout Logic
+    // Logout logic here
+    closePopup();
+  }
+
+
+  </script>
 
 </html>

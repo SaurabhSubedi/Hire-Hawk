@@ -7,6 +7,27 @@
   <title>Recruiter's Dashboard -HireHawk</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"> <!-- Link to Poppins font -->
 </head>
+
+<script>
+  // Add the following code to your scripts.js file
+function showPopup() {
+  $("#popup").css({
+    top: $("#profileImage").offset().top + $("#profileImage").outerHeight(),
+    left: $("#profileImage").offset().left - 60
+  }).show();
+}
+
+function closePopup() {
+  $("#popup").hide();
+}
+
+function logout() {
+  // TODO : Add Logout Logic
+  // Logout logic here
+  closePopup();
+}
+
+</script>
 <body>
 
 
@@ -15,11 +36,21 @@
       <img src="{% static "image/HireHawkLogo.png"%}" alt="Logo">
     </div>
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="{% url 'contactus' %}" target="_blank">Contact</a></li>
+      <li><a href="RecDashboard.html" class="thispage">Home</a></li>
+      <li><a href="{% url 'contactus' %}">Contact</a></li>
+      <li class="nav-item profile" id="profileImage" onclick="showPopup()">
+        <img src="{% static "image/profile-image.jpg" %}" alt="Profile Avatar">
+      </li>
     </ul>
   </nav>
 
+<!-- Logout Dialog -->
+<div id="popup" class="popup">
+  <button onclick="logout()" class="logoutbtn">Logout</button>
+  <button onclick="closePopup()" >Cancel</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
   <div class="postedJobTitle">
     <h2>Posted Jobs</h2>
@@ -45,12 +76,61 @@
 
 
 
+<button>
+<div class="floating-button" id="floatingButton">
+  <span class="icon">
+    ➕
+  </span>
+  <span class="text">Create Job</span>
+</div>
+</button>
+
 </body>
 
 
 
 
 <style>
+
+  /* Popup styling */
+.popup {
+  display: none;
+  position: absolute;
+  background: #fff;
+  border-radius: 7px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup button {
+  margin: 6%;
+  /* margin-left: 10px; */
+  font-family: 'Poppins', sans-serif;
+  color: black;
+  border-radius: 7px;
+  margin-left: auto; 
+  font-weight: 600;
+  border: 1px solid black;
+  background-color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.popup button:hover {
+  background-color: #B467EF;
+  color: white; /* Optional: Change text color on hover */
+}
+
+.popup .logoutbtn:hover {
+  background-color: red;
+  color: white; 
+}
+
+
   body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -124,19 +204,14 @@ nav .profile img {
 }
 
 
-button {
-  font-family: 'Poppins', sans-serif;
-  background-color: #B467EF;
-  color: black;
-  padding: 11px 30px;
-  border-radius: 23px;
-  cursor: pointer;
-  margin-left: auto; 
-  font-weight: 600;
-  border: 1px solid;
-}
+
 
 .seeApplicantButton {
+  font-family: 'Poppins', sans-serif;
+  color: black;
+  border-radius: 23px;
+  margin-left: auto; 
+  font-weight: 600;
   border: 1px solid black;
   background-color: white;
   padding: 10px 20px;
@@ -154,7 +229,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 26px;
+  margin-top: 46px;
   position: relative;
   text-align: center;
 }
@@ -177,16 +252,64 @@ button {
       border-bottom: 2px solid red; /* Change the color as needed */
     }
 
+    .thispage{
+      display: inline-block;
+      position: relative;
+   }
+
+   .thispage::after {
+     
+     content: "";
+     display: block;
+     position: absolute;
+     bottom: 0;
+     right: 0;
+     height: 50%;
+     width: 50%;
+     border-bottom: 2px solid red; /* Change the color as needed */
+   }
+
+
+
+   /* Floating Post Button */
+   .floating-button {
+  font-family: 'Poppins', sans-serif;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #3ac4ff;
+  color: black;
+  border: 1px solid;
+  padding: 10px 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.floating-button .icon {
+  margin-right: 8px;
+}
+.floating-button .text {
+  font-weight: inherit;
+}
+
+.floating-button:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid;
+}
+
+/* ------------------------------- */
+
+
 
 </style>
 
 
 
 
-
-
-<script>
-</script>
 
 
 
