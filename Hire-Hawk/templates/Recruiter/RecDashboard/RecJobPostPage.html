@@ -15,33 +15,33 @@
 
     <!-- Job Container  -->
     <div class="job-container">
-      <form action="" method="post">
+<form action="{% url 'job_create' %}" method="post">
+        {% csrf_token %}
         <div class="job-title">
           <h5>Job Title :</h5>
-          <input type="text" name="job_title" placeholder="Job Title" value="">
+          <input type="text" name="job_title" placeholder="Job Title" required>
         </div>
         <div class="job-description">
           <h5>Salary :</h5>
-          <input type="int" name="salary" placeholder="Salary" value="">
+          <input type="int" name="salary" placeholder="Salary" required>
         </div>
-    
-          
-      </form>
+
     </div>
 
     <!-- Details Container  -->
     <div class="job-section">
-<form action="{% url 'job_edit_save' %}" method="post">
+
         
         <div class="section-header">
           About the Job
         </div>
-        <input type="hidden" value = {{job.id}} name="job_id">
         <div class="job-description">
+          <h4>Brief_descritiption:</h4>
+          <textarea class="txtarea" name="brief_stat" placeholder="Enter brief statement about job..." name="brief_stat" required></textarea>
           <h4>Responsibilities:</h4>
-          <textarea class="txtarea" name="responsibilities" placeholder="Enter responsibilities..."></textarea>
+          <textarea class="txtarea" name="responsibilities" placeholder="Enter responsibilities..." name="responsibilities" required></textarea>
           <h4>Requirements:</h4>
-          <textarea class="txtarea" name="requirements" placeholder="Enter requirements..."></textarea>
+          <textarea class="txtarea" name="requirements" placeholder="Enter requirements..." name="requirements" required></textarea>
         </div>
       
     </div>

@@ -36,7 +36,7 @@ function logout() {
       <img src="{% static "image/HireHawkLogo.png"%}" alt="Logo">
     </div>
     <ul>
-      <li><a href="RecDashboard.html" class="thispage">Home</a></li>
+      <li><a href="{% url 'admin_dashboard' %}" class="thispage">Home</a></li>
       <li><a href="{% url 'contactus' %}">Contact</a></li>
       <li class="nav-item profile" id="profileImage" onclick="showPopup()">
         <img src="{% static "image/profile-image.jpg" %}" alt="Profile Avatar">
@@ -46,7 +46,7 @@ function logout() {
 
 <!-- Logout Dialog -->
 <div id="popup" class="popup">
-  <button onclick="logout()" class="logoutbtn">Logout</button>
+  <button class="logoutbtn" onclick="location.href='{% url 'logout' %}'">Logout</button>
   <button onclick="closePopup()" >Cancel</button>
 </div>
 
@@ -76,7 +76,7 @@ function logout() {
 
 
 
-<button>
+<button onclick = 'location.href="{% url 'job_create' %}"'>
 <div class="floating-button" id="floatingButton">
   <span class="icon">
     ➕

@@ -99,18 +99,26 @@
         
         <!-- Delete Job Container  -->
         <div class="Delete-section">
-            <button class="DcloseButton" id="Dclosebutton">
-                <i class="fas fa-trash DcloseLogo"></i>
-                <div>Delete Job</div>
-              </button>   
+            <form action="{% url 'job_delete' %}" method ="post">
+                {% csrf_token %}
+                <input type="hidden" value = {{job.id}} name="job_id">
+                <button class="DcloseButton" id="Dclosebutton" type="submit">
+                    <i class="fas fa-trash DcloseLogo"></i>
+                    <div>Delete Job</div>
+                </button>   
+            </form>
         </div>
 
         <!-- Dismiss Job Container  -->
         <div class="Dismiss-section">
-            <button class="closeButton" id="closebutton">
-                <div class="closeLogo">X</div>
-                <div>Dismiss Job</div>
-              </button>   
+            <form action="{% url 'job_dismiss'%}" method="post">
+             {% csrf_token %}
+                <input type="hidden" value = {{job.id}} name="job_id">
+                <button class="closeButton" id="closebutton" type="submit">
+                    <div class="closeLogo">X</div>
+                    <div>Dismiss Job</div>
+                </button>
+            </form>  
         </div>
         
     </div>

@@ -8,7 +8,7 @@ class Job_description(models.Model):
     requirement = models.TextField()
     salary = models.CharField(max_length = 100)
     created_at = models.DateTimeField(auto_now_add= True , null = True)
-      
+    
     def __str__(self):
         return self.title
 

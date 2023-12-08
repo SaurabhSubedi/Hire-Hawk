@@ -14,5 +14,8 @@ urlpatterns = [
     path("admindash/", views.admin_all_jobs, name= "admin_dashboard"),
     path("adminjobdesc/",views.admin_job_desc,name="admin_job_desc"),
     path("jobedit/", views.admin_job_edit, name="admin_job_edit"),
-    path("jobeditsaved/", views.job_edit_save, name="job_edit_save")
+    path("jobeditsaved/", views.job_edit_save, name="job_edit_save"),
+    path("jobcreatepage/",views.job_create, name="job_create"),
+    path("jobdelete/",views.job_delete,name="job_delete"),
+    path("jobdismiss/",views.job_dismiss,name="job_dismiss"),
 ]

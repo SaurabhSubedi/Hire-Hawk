@@ -23,11 +23,10 @@
 
     <button type="submit" onclick="validateLogin()">Login</button>
   </form>
-
-
+  <div>{% for message in messages%} {{message}}{% endfor %}</div>
 <p>Don't have an account? <a href="{% url 'signup' %}">Sign up</a></p>
 </div>
- 
+
   <script src="RecLoginScript.js"></script>
   <script src = "{% static "js/bootstrap.js" %}"></script>
 

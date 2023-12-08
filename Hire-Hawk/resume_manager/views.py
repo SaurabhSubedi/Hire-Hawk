@@ -5,6 +5,9 @@ from django.contrib.auth.models import User
 from .self_cosine_sim import my_cosine_similarity,read_text
 from .utils import skill_extraction
 from django.contrib import messages
+from django.shortcuts import get_object_or_404
+from django.core.mail import send_mail
+from django.conf import settings
 # Create your views here.
 
 def applicant_view(request):
@@ -19,7 +22,7 @@ def applicant_view(request):
 def job_details_view(request):
     if request.method == "POST":
         job_id = request.POST.get("job_id")
-        job = Job_description.objects.get(id = job_id)
+        job = get_object_or_404(Job_description,id=job_id)
         applicant_number = job.applicant_count()
         text = job.requirement.lower()
         skills = skill_extraction(text)
@@ -75,7 +78,7 @@ def resume_upload(request):
         resume = request.FILES['resume']
         current_user = request.user
         job_id = request.POST.get("job_desc")
-        job = Job_description.objects.get(id = job_id)
+        job = get_object_or_404(Job_description,id=job_id)
         new_appli = Applicant(user = current_user,job_description= job,resume= resume)
         new_appli.save()
         job_requirement = job.requirement
@@ -103,7 +106,7 @@ def admin_job_desc(request):
     if request.user.is_superuser:
         if request.method == "POST":
             job_id = request.POST.get("job_id")
-            job = Job_description.objects.get(id = job_id)
+            job = get_object_or_404(Job_description,id=job_id)
             applicant_number = job.applicant_count()
             all_applicants = Applicant.objects.filter(job_description=job).order_by('-rank')
             count_applicants = min(3,all_applicants.count())
@@ -117,7 +120,7 @@ def admin_job_edit(request):
     if request.user.is_superuser:
         if request.method == "POST":
             job_id = request.POST.get("job_id")
-            job = Job_description.objects.get(id = job_id)
+            job = get_object_or_404(Job_description,id=job_id)
             return render(request,'Recruiter/RecDashboard/RecJobEditPage.html',{'job': job})
 
 def job_edit_save(request):
@@ -127,7 +130,7 @@ def job_edit_save(request):
             responsibilites = request.POST.get("responsibilities")
             requirements = request.POST.get("requirements")
             salary = request.POST.get("salary")
-            job = Job_description.objects.get(id= job_id)
+            job = get_object_or_404(Job_description,id=job_id)
             job.responsibility = responsibilites
             job.requirement = requirements
             job.salary = salary
@@ -141,3 +144,44 @@ def contactus_view(request):
 
 def profile_view(request):
     return render(request, "ProfiePage.html")
+
+def job_create(request):
+    if request.user.is_superuser:
+        if request.method == "POST":
+            job_title = request.POST.get("job_title")
+            salary = request.POST.get("salary")
+            responsibilities = request.POST.get("responsibilities")
+            requirements = request.POST.get("requirements")
+            brief_stat = request.POST.get("brief_stat")
+            job = Job_description(title = job_title, brief_stat = brief_stat, responsibility = responsibilities, requirement= requirements,salary = salary)
+            job.save()
+            messages.success(request,"Job created successfully")
+            return redirect("admin_dashboard")
+        return render(request,"Recruiter/RecDashboard/RecJobPostPage.html")
+
+def job_delete(request):
+    if request.user.is_superuser:
+        if request.method=="POST":
+            job_id = request.POST.get('job_id')
+            job = get_object_or_404(Job_description,id=job_id)
+            job.delete()
+            messages.success(request,"Job deleted successfully")
+            return redirect('admin_dashboard')
+
+def job_dismiss(request):
+    if request.user.is_superuser:
+        if request.method == "POST":
+            job_id = request.POST.get("job_id")
+            job = get_object_or_404(Job_description, id=job_id)
+            all_applicants = Applicant.objects.filter(job_description=job).order_by('-rank')
+            count_applicants = min(3,all_applicants.count())
+            top_applicants = all_applicants[:count_applicants]
+            for applicant in top_applicants:
+                subject = "Selection for further rounds"
+                message = "Test message"
+                sender_email = settings.EMAIL_HOST_USER
+                receiver = [applicant.user.email]
+                send_mail(subject,message,sender_email,receiver,fail_silently=False)
+                return redirect('admin_dashboard')
+
+            
