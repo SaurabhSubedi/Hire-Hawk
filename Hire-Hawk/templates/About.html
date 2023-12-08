@@ -8,54 +8,21 @@
     <title>About Us -HireHawk</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #66D1FF;
-            color: #fff;
-            text-align: center;
-            padding: 1em;
-        }
-
-        .logo {
-            max-width: 100px;
-            max-height: 100px;
-        }
-
-        .about-section,
-        .team-section {
-            padding: 2em;
-        }
-
-        .about-content {
-            max-width: 800px;
-            margin: auto;
-        }
-
-        .team-member {
-            text-align: center;
-            margin: 20px;
-        }
-
-        .teamtxt{
-            align-items: center;
-            text-align: center;
-        }
-
-        .member-photo {
-            max-width: 150px;
-            border-radius: 50%;
-        }
-
-    </style>
+    
 </head>
 
 <body>
+    <nav>
+        <div class="logo">
+          <img src="{% static "image/HireHawkLogo.png"%}" alt="Logo">
+        </div>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="{% url 'about' %}" class="thispage">About</a></li>
+          <li><a href="{% url 'contactus' %}">Contact</a></li>
+          <li class="profile"><a href="{% static url 'profile' %}"><img src="{% static "image/profile-image.jpg" %}" alt="ProfileAvatar"></a></li>
+        </ul>
+      </nav>
 
     <header>
         <img src="{% static 'image/HireHawkLogo.png' %}" alt="HireHawk Logo" class="logo">
@@ -120,4 +87,116 @@
 
 </body>
 
+
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(to right, #131414, #3b3342);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo img {
+  max-height: 40px; 
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+nav .profile{
+  cursor: pointer;
+}
+
+nav .profile img {
+  border-radius: 50%;
+  max-height: 40px;
+  cursor: pointer;
+}
+
+
+    header {
+        background-color: #66D1FF;
+        color: #fff;
+        text-align: center;
+        padding: 1em;
+        padding-top: 7%;
+    }
+
+    .logo {
+        max-width: 100px;
+        max-height: 100px;
+    }
+
+    .about-section,
+    .team-section {
+        padding: 2em;
+    }
+
+    .about-content {
+        max-width: 800px;
+        margin: auto;
+    }
+
+    .team-member {
+        text-align: center;
+        margin: 20px;
+    }
+
+    .teamtxt{
+        align-items: center;
+        text-align: center;
+    }
+
+    .member-photo {
+        max-width: 150px;
+        border-radius: 50%;
+    }
+
+    
+.thispage{
+      display: inline-block;
+      position: relative;
+   }
+
+   .thispage::after {
+     
+     content: "";
+     display: block;
+     position: absolute;
+     bottom: 0;
+     right: 0;
+     height: 50%;
+     width: 50%;
+     border-bottom: 2px solid red; /* Change the color as needed */
+   }
+
+
+</style>
 </html>

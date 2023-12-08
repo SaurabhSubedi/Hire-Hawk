@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Applicants</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"> <!-- Link to Poppins font -->
+
+</head>
+<body>
+
+    
+
+  <h2>Email to your top 3 Applicants</h2>
+
+  <form id="emailForm">
+
+    <!-- TODO : PASS THE THREE EMAILS HERE. IT IS READONLY  -->
+    <label for="to">To:</label>
+    <input type="text" id="to" name="to" value="dummy1@gmail.com, dummy2@gmail.com, dummy3@gmail.com" readonly>
+
+    <!-- TODO : ADD VALUE PARAMETERS  -->
+    <label for="subject">Subject:</label>
+    <input type="text" id="subject" name="subject" placeholder="Subject" value = "Update on your application for #JobTitle" required>
+
+    <label for="body">Body:</label>
+    <textarea class = "txtarea"id="body" name="body" placeholder="Eg : You have been shortlisted for the next round.." rows="8" required></textarea>
+
+
+    <!-- Send Email Button  -->
+    <div class="Delete-section">
+        <form action="" method ="post">
+            <input type="hidden" value = "" name="">
+            <button onclick="showPopup()" class="DcloseButton" id="Dclosebutton" type="submit">
+                <!-- <i class="fas fa-trash DcloseLogo"></i> -->
+                <div>Send Email >></div>
+            </button>   
+        </form>
+    </div>
+
+<!-- Copy this POPUP to use Everywhere -->
+<div id="emailPopup" class="popup">
+    <div id="popupContent">
+      I'm supposed to be a Message that Pops Up
+      <!-- backend msg will be displayed here -->
+    </div>
+    <button onclick="closePopup()">Close</button>
+  </div>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<style>
+/* Popup styling */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  border-radius: 8px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  text-align: center;
+  z-index: 1000;
+}
+
+.popup button {
+  font-family: 'Poppins' sans-serif;
+  font-weight: bold;
+  margin-top: 10px;
+  color: black;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid;
+  cursor: pointer;
+  padding: 6px;
+  float: right;
+}
+
+.popup button:hover{
+    background-color: #B467EF;
+    color: white;
+}
+</style>
+<script>
+    function showPopup() {
+    
+      $("#popupContent");
+      $("#emailPopup").show();
+    }
+    
+    function closePopup() {
+      $("#emailPopup").hide();
+    }
+</script>
+ <!-- -----------PopUp End---------- -->
+
+
+  </form>
+
+
+
+</body>
+
+<style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      cursor : text;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+
+    /* This is send Emails Button's CSS  */
+    .Delete-section {
+      align-items: center;
+      display: flex; 
+      vertical-align: top; 
+      margin-right: 0px;
+    }
+
+    .DcloseButton {
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 13px;
+      display: flex;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      background-color: white;
+      color: black;
+      padding: 11px 30px;
+      margin-left: auto; 
+      font-weight: 600;
+      border: 1px solid;
+    }
+
+
+    .DcloseButton:hover {
+      border: 1px solid;
+      color: white;
+      background-color: #B467EF;
+    }
+
+    /* -------------------------------------- */
+
+    textarea{
+      border-radius: 10px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+
+
+
+
+  </style>
+
+
+
+
+
+
+</html>

@@ -142,6 +142,9 @@ def about_view(request):
 def contactus_view(request):
     return render(request, "ContactUs.html")
 
+def Acontactus_view(request):
+    return render(request, "Applicant Updated/ContactUs.html")
+
 def profile_view(request):
     return render(request, "ProfiePage.html")
 

@@ -5,8 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HireHawk Login</title>
-  <link rel="stylesheet" href="{% static "css/loginstyle.css" %}">
-  <link rel="stylesheet" href = "{% static "css/bootstrap.css" %}">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -21,14 +19,187 @@
     <label for="password">Password</label>
     <input type="password" id="password" name="password" required>
 
-    <button type="submit" onclick="validateLogin()">Login</button>
+    <button type="submit" onclick="showPopup(); validateLogin()">Login</button>
   </form>
-  <div>{% for message in messages%} {{message}}{% endfor %}</div>
 <p>Don't have an account? <a href="{% url 'signup' %}">Sign up</a></p>
+
+
+<!-- Copy this POPUP to use Everywhere -->
+<div id="emailPopup" class="popup">
+  <div id="popupContent">
+    I'm supposed to be a Message that Pops Up
+    <!-- backend msg will be displayed here -->
+  </div>
+  <button onclick="closePopup()">Close</button>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<style>
+/* Popup styling */
+.popup {
+display: none;
+position: fixed;
+top: 50%;
+border-radius: 8px;
+left: 50%;
+transform: translate(-50%, -50%);
+background: #fff;
+border: 1px solid #ccc;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+padding: 12px;
+text-align: center;
+z-index: 1000;
+}
+
+.popup button {
+font-family: 'Poppins' sans-serif;
+font-weight: bold;
+margin-top: 10px;
+color: black;
+background-color: white;
+border-radius: 8px;
+border: 1px solid;
+cursor: pointer;
+padding: 6px;
+float: right;
+}
+
+.popup button:hover{
+  background-color: #B467EF;
+  color: white;
+}
+</style>
+<script>
+  function showPopup() {
+  
+    $("#popupContent");
+    $("#emailPopup").show();
+  }
+  
+  function closePopup() {
+    $("#emailPopup").hide();
+  }
+</script>
+<!-- -----------PopUp End---------- -->
 </div>
 
-  <script src="RecLoginScript.js"></script>
-  <script src = "{% static "js/bootstrap.js" %}"></script>
+  <script>
+    function validateLogin() {
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      var errorMessageContainer = document.getElementById('error-message');
+    
+      // Clear previous error message
+      errorMessageContainer.innerHTML = '';
+    
+      // Perform basic validation
+      if (email === '' || password === '') {
+        errorMessageContainer.innerHTML = 'Please enter both email and password.';
+        return;
+      }
+    
+      // Validate email format
+      if (!isValidEmail(email)) {
+        errorMessageContainer.innerHTML = 'Please enter a valid email address.';
+        return;
+      }
+  
+      
+      window.location.href = 'RecDashboard/RecDashboard.html';
+    }
+    
+    // Validator function for email format
+    function isValidEmail(email) {
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+    
+  </script>
 
+
+  <style>
+    body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #B467EF, #66D1FF);
+    /* Additional styles for centering the form */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .container{
+    float: right;
+    padding-left: 50px;
+  }
+
+  
+  form {
+    width: 300px;
+    padding: 20px;
+    /* border: 1px solid #ccc; */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #66D1FF;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  input {
+    width: calc(100% - 16px); 
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 8px; 
+    outline: none;
+  }
+  
+  button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    background-color: #66D1FF;
+    color: black;
+    padding: 8px 40px;
+    border: 1px solid black;
+    border-radius: 23px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    
+  }
+
+  button:hover{
+    background-color: #B467EF;
+    color: white;
+    border: 1px solid white;
+    
+  }
+
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+  }
+  
+  
+
+  
+  p {
+    text-align: center;
+    margin-top: 20px;
+    clear: both; /* Add this to ensure proper clearing of floats */
+  }
+  
+  a {
+    color: blue;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px; /* Add margin-top for spacing */
+  }
+  </style>
 </body>
 </html>

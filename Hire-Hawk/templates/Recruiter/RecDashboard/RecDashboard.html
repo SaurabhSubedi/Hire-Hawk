@@ -9,7 +9,6 @@
 </head>
 
 <script>
-  // Add the following code to your scripts.js file
 function showPopup() {
   $("#popup").css({
     top: $("#profileImage").offset().top + $("#profileImage").outerHeight(),
@@ -22,8 +21,6 @@ function closePopup() {
 }
 
 function logout() {
-  // TODO : Add Logout Logic
-  // Logout logic here
   closePopup();
 }
 
@@ -131,10 +128,7 @@ function logout() {
 }
 
 
-  body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-}
+/* Nav-styling */
 
 nav {
   position: fixed;
@@ -178,6 +172,13 @@ nav .profile img {
   border-radius: 50%;
   max-height: 40px;
   cursor: pointer;
+}
+
+/* ----------------------------------------- */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
 }
 
 .content {

@@ -10,6 +10,7 @@ urlpatterns = [
     path("score_gauge/<int:score>/", views.score_view, name= "score"),
     path("about/", views.about_view, name= "about"),
     path("ContactUs/", views.contactus_view, name= "contactus"),
+    path("AContactUs/", views.Acontactus_view, name= "Acontactus"),
     path("ProfilePage/", views.profile_view, name= "profile"),
     path("admindash/", views.admin_all_jobs, name= "admin_dashboard"),
     path("adminjobdesc/",views.admin_job_desc,name="admin_job_desc"),
