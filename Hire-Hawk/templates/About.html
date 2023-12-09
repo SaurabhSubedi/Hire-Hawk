@@ -17,9 +17,9 @@
           <img src="{% static "image/HireHawkLogo.png"%}" alt="Logo">
         </div>
         <ul>
-          <li><a href="#home">Home</a></li>
+          <li><a href="{% url 'appview' %}">Home</a></li>
           <li><a href="{% url 'about' %}" class="thispage">About</a></li>
-          <li><a href="{% url 'contactus' %}">Contact</a></li>
+          <li><a href="{% url 'Acontactus' %}">Contact</a></li>
           <li class="profile"><a href="{% static url 'profile' %}"><img src="{% static "image/profile-image.jpg" %}" alt="ProfileAvatar"></a></li>
         </ul>
       </nav>

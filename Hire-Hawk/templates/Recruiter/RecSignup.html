@@ -29,20 +29,22 @@
     <label for="confirmPassword">Confirm Password</label>
     <input type="password" id="confirmPassword" name="confirmPassword" required>
 
-    <button type="submit" onclick="showPopup(); validateSignup()">Sign Up</button>
+    <button type="submit" onclick="validateSignup()">Sign Up</button>
   </form>
 
   <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
 </div>
 
+{% for message in messages %}
 <!-- Copy this POPUP to use Everywhere -->
 <div id="emailPopup" class="popup">
   <div id="popupContent">
-    I'm supposed to be a Message that Pops Up
+    {{message}}
     <!-- backend msg will be displayed here -->
   </div>
   <button onclick="closePopup()">Close</button>
 </div>
+{% endfor %}
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 <style>
@@ -76,20 +78,18 @@ float: right;
 }
 
 .popup button:hover{
-  background-color: #B467EF;
-  color: white;
+background-color: #B467EF;
+color: white;
 }
 </style>
 <script>
-  function showPopup() {
-  
-    $("#popupContent");
-    $("#emailPopup").show();
-  }
-  
-  function closePopup() {
-    $("#emailPopup").hide();
-  }
+("#popupContent");
+$("#emailPopup").show();
+
+
+function closePopup() {
+  $("#emailPopup").hide();
+}
 </script>
 <!-- -----------PopUp End---------- -->
 

@@ -1,2 +1,7 @@
-bit.ly/HireHawkUiDesign 
-for ui files
+for applicant in top_applicants:
+                subject = "Selection for further rounds"
+                message = "Test message"
+                sender_email = settings.EMAIL_HOST_USER
+                receiver = [applicant.user.email]
+                send_mail(subject,message,sender_email,receiver,fail_silently=False)
+                return redirect('admin_dashboard')

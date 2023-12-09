@@ -17,7 +17,7 @@
           <img src="{% static "image/HireHawkLogo.png"%}" alt="Logo">
         </div>
         <ul>
-          <li><a href="#home">Home</a></li>
+          <li><a href="{% url 'appview'%}">Home</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="{% url 'contactus' %}" class="thispage">Contact</a></li>
           <li class="nav-item profile" id="profileImage" onclick="showPopup()">

@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Applicant HomePage</title>
+  <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"> -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -14,10 +15,12 @@
       <img src="{% static "image/HireHawkLogo.png"%}" alt="Logo">
     </div>
     <ul>
-      <li><a href="#home" class="thispage">Home</a></li>
+      <li><a href="{% url 'appview' %}" class="thispage">Home</a></li>
       <li><a href="{% url 'about' %}">About</a></li>
       <li><a href="{% url 'Acontactus' %}">Contact</a></li>
-      <li class="profile"><a href="{% static url 'profile' %}"><img src="{% static "image/profile-image.jpg" %}" alt="ProfileAvatar"></a></li>
+      <li class="nav-item profile" id="profileImage" onclick="showPopup()">
+        <img src="{% static "image/profile-image.jpg" %}" alt="Profile Avatar">
+      </li>
     </ul>
   </nav>
 
@@ -56,6 +59,64 @@
   </div>
 {% endfor %}
 
+{% for message in messages%}
+<!-- Copy this POPUP to use Everywhere -->
+<div id="emailPopup" class="popup">
+  <div id="popupContent">
+    {{meessage}}
+    <!-- backend msg will be displayed here -->
+  </div>
+  <button onclick="closePopup()">Close</button>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<style>
+/* Popup styling */
+.popup {
+position: fixed;
+top: 50%;
+border-radius: 8px;
+left: 50%;
+transform: translate(-50%, -50%);
+background: #fff;
+border: 1px solid #ccc;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+padding: 12px;
+text-align: center;
+z-index: 1000;
+}
+
+.popup button {
+font-family: 'Poppins' sans-serif;
+font-weight: bold;
+margin-top: 10px;
+color: black;
+background-color: white;
+border-radius: 8px;
+border: 1px solid;
+cursor: pointer;
+padding: 6px;
+float: right;
+}
+
+.popup button:hover{
+  background-color: #B467EF;
+  color: white;
+}
+</style>
+<script>
+  function showPopup() {
+  
+    $("#popupContent");
+    $("#emailPopup").show();
+  }
+  
+  function closePopup() {
+    $("#emailPopup").hide();
+  }
+</script>
+<!-- -----------PopUp End---------- -->
+{% endfor %}
  
   <script src="{% static "js/AppliScript.js" %}"></script>
 

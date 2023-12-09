@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recruiter's Dashboard -HireHawk</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"> <!-- Link to Poppins font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Link to Poppins font -->
 </head>
 
 <script>
-function showPopup() {
-  $("#popup").css({
-    top: $("#profileImage").offset().top + $("#profileImage").outerHeight(),
-    left: $("#profileImage").offset().left - 60
-  }).show();
-}
+  function showPopup() {
+    $("#popup").css({
+      top: $("#profileImage").offset().top + $("#profileImage").outerHeight(),
+      left: $("#profileImage").offset().left - 60
+    }).show();
+  }
 
-function closePopup() {
-  $("#popup").hide();
-}
+  function closePopup() {
+    $("#popup").hide();
+  }
 
-function logout() {
-  closePopup();
-}
+  function logout() {
+    closePopup();
+  }
 
 </script>
+
 <body>
 
 
@@ -41,46 +44,106 @@ function logout() {
     </ul>
   </nav>
 
-<!-- Logout Dialog -->
-<div id="popup" class="popup">
-  <button class="logoutbtn" onclick="location.href='{% url 'logout' %}'">Logout</button>
-  <button onclick="closePopup()" >Cancel</button>
-</div>
+  <!-- Logout Dialog -->
+  <div id="popup" class="popup">
+    <button class="logoutbtn" onclick="location.href='{% url 'logout' %}'">Logout</button>
+    <button onclick="closePopup()">Cancel</button>
+  </div>
 
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
   <div class="postedJobTitle">
     <h2>Posted Jobs</h2>
   </div>
 
 
-{% for job in jobs %}
-  <div class="content" >
+  {% for job in jobs %}
+  <div class="content">
     <div class="text-content">
       <h2>{{job.title}}</h2>
-      
+
     </div>
     <form method="post" action={% url 'admin_job_desc' %}>
       {% csrf_token %}
-      <input type = "hidden" value = {{job.id}} name="job_id" ></input>
-     <button  class="seeApplicantButton">
-      See Applicants >>
-     </button>
+      <input type="hidden" value={{job.id}} name="job_id"></input>
+      <button class="seeApplicantButton">
+        See Applicants >>
+      </button>
     </form>
     <div class="selected-file" id="selectedFile1"></div>
   </div>
-{% endfor %}
+  {% endfor %}
 
 
 
-<button onclick = 'location.href="{% url 'job_create' %}"'>
-<div class="floating-button" id="floatingButton">
-  <span class="icon">
-    ➕
-  </span>
-  <span class="text">Create Job</span>
-</div>
-</button>
+  <button onclick='location.href="{% url "job_create" %}" '>
+    <div class="floating-button" id="floatingButton">
+      <span class="icon">
+        ➕
+      </span>
+      <span class="text">Create Job</span>
+    </div>
+  </button>
+
+  {% for message in messages %}
+  <!-- Copy this POPUP to use Everywhere -->
+  <div id="emailPopup" class="popup">
+    <div id="popupContent">
+      {{message}}
+      <!-- backend msg will be displayed here -->
+    </div>
+    <button onclick="closePopup()">Close</button>
+  </div>
+  {% endfor %}
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<style>
+/* Popup styling */
+.popup {
+display: none;
+position: fixed;
+top: 50%;
+border-radius: 8px;
+left: 50%;
+transform: translate(-50%, -50%);
+background: #fff;
+border: 1px solid #ccc;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+padding: 12px;
+text-align: center;
+z-index: 1000;
+}
+
+.popup button {
+font-family: 'Poppins' sans-serif;
+font-weight: bold;
+margin-top: 10px;
+color: black;
+background-color: white;
+border-radius: 8px;
+border: 1px solid;
+cursor: pointer;
+padding: 6px;
+float: right;
+}
+
+.popup button:hover{
+  background-color: #B467EF;
+  color: white;
+}
+</style>
+<script>
+  ("#popupContent");
+  $("#emailPopup").show();
+  
+  
+  function closePopup() {
+    $("#emailPopup").hide();
+  }
+</script>
+<!-- -----------PopUp End---------- -->
+
+
 
 </body>
 
@@ -88,224 +151,225 @@ function logout() {
 
 
 <style>
-
   /* Popup styling */
-.popup {
-  display: none;
-  position: absolute;
-  background: #fff;
-  border-radius: 7px;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  align-items: center;
-  z-index: 1000;
-}
+  .popup {
+    display: none;
+    position: absolute;
+    background: #fff;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    align-items: center;
+    z-index: 1000;
+  }
 
-.popup button {
-  margin: 6%;
-  /* margin-left: 10px; */
-  font-family: 'Poppins', sans-serif;
-  color: black;
-  border-radius: 7px;
-  margin-left: auto; 
-  font-weight: 600;
-  border: 1px solid black;
-  background-color: white;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
+  .popup button {
+    margin: 6%;
+    /* margin-left: 10px; */
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    border-radius: 7px;
+    margin-left: auto;
+    font-weight: 600;
+    border: 1px solid black;
+    background-color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
 
-.popup button:hover {
-  background-color: #B467EF;
-  color: white; /* Optional: Change text color on hover */
-}
+  .popup button:hover {
+    background-color: #B467EF;
+    color: white;
+    /* Optional: Change text color on hover */
+  }
 
-.popup .logoutbtn:hover {
-  background-color: red;
-  color: white; 
-}
-
-
-/* Nav-styling */
-
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: linear-gradient(to right, #131414, #3b3342);
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-nav .logo img {
-  max-height: 40px; 
-}
-
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-}
-
-nav li {
-  margin-right: 20px;
-}
-
-nav a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-nav .profile{
-  cursor: pointer;
-}
-
-nav .profile img {
-  border-radius: 50%;
-  max-height: 40px;
-  cursor: pointer;
-}
-
-/* ----------------------------------------- */
-
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-}
-
-.content {
-  margin-top: 12px; 
-  margin-left: 70px;
-  margin-right: 70px;
-  padding: 20px;
-  cursor: pointer;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column; 
-  align-items: flex-start;
-  border: none;
-  box-shadow: 0 0 0 0.2px black;
-}
-
-.text-content {
-  margin-bottom: 10px; 
-}
-
-.text-content h2,
-.text-content p {
-  margin: 0;
-}
+  .popup .logoutbtn:hover {
+    background-color: red;
+    color: white;
+  }
 
 
+  /* Nav-styling */
 
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to right, #131414, #3b3342);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-.seeApplicantButton {
-  font-family: 'Poppins', sans-serif;
-  color: black;
-  border-radius: 23px;
-  margin-left: auto; 
-  font-weight: 600;
-  border: 1px solid black;
-  background-color: white;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
+  nav .logo img {
+    max-height: 40px;
+  }
 
-.seeApplicantButton:hover {
-  background-color: #B467EF;
-  color: white; /* Optional: Change text color on hover */
-}
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
 
+  nav li {
+    margin-right: 20px;
+  }
 
-.postedJobTitle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 46px;
-  position: relative;
-  text-align: center;
-}
+  nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+  }
 
-    .postedJobTitle h2 {
-      
-      display: inline-block;
-      position: relative;
-    }
+  nav .profile {
+    cursor: pointer;
+  }
 
-    .postedJobTitle h2::after {
-     
-      content: "";
-      display: block;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      height: 50%;
-      width: 50%;
-      border-bottom: 2px solid red; /* Change the color as needed */
-    }
+  nav .profile img {
+    border-radius: 50%;
+    max-height: 40px;
+    cursor: pointer;
+  }
 
-    .thispage{
-      display: inline-block;
-      position: relative;
-   }
+  /* ----------------------------------------- */
 
-   .thispage::after {
-     
-     content: "";
-     display: block;
-     position: absolute;
-     bottom: 0;
-     right: 0;
-     height: 50%;
-     width: 50%;
-     border-bottom: 2px solid red; /* Change the color as needed */
-   }
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+  }
+
+  .content {
+    margin-top: 12px;
+    margin-left: 70px;
+    margin-right: 70px;
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: none;
+    box-shadow: 0 0 0 0.2px black;
+  }
+
+  .text-content {
+    margin-bottom: 10px;
+  }
+
+  .text-content h2,
+  .text-content p {
+    margin: 0;
+  }
 
 
 
-   /* Floating Post Button */
-   .floating-button {
-  font-family: 'Poppins', sans-serif;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #3ac4ff;
-  color: black;
-  border: 1px solid;
-  padding: 10px 15px;
-  border-radius: 12px;
-  cursor: pointer;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-}
 
-.floating-button .icon {
-  margin-right: 8px;
-}
-.floating-button .text {
-  font-weight: inherit;
-}
+  .seeApplicantButton {
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    border-radius: 23px;
+    margin-left: auto;
+    font-weight: 600;
+    border: 1px solid black;
+    background-color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
 
-.floating-button:hover {
-  background-color: white;
-  color: black;
-  border: 1px solid;
-}
-
-/* ------------------------------- */
+  .seeApplicantButton:hover {
+    background-color: #B467EF;
+    color: white;
+    /* Optional: Change text color on hover */
+  }
 
 
+  .postedJobTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 46px;
+    position: relative;
+    text-align: center;
+  }
 
+  .postedJobTitle h2 {
+
+    display: inline-block;
+    position: relative;
+  }
+
+  .postedJobTitle h2::after {
+
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 50%;
+    width: 50%;
+    border-bottom: 2px solid red;
+    /* Change the color as needed */
+  }
+
+  .thispage {
+    display: inline-block;
+    position: relative;
+  }
+
+  .thispage::after {
+
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 50%;
+    width: 50%;
+    border-bottom: 2px solid red;
+    /* Change the color as needed */
+  }
+
+
+
+  /* Floating Post Button */
+  .floating-button {
+    font-family: 'Poppins', sans-serif;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #3ac4ff;
+    color: black;
+    border: 1px solid;
+    padding: 10px 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+  }
+
+  .floating-button .icon {
+    margin-right: 8px;
+  }
+
+  .floating-button .text {
+    font-weight: inherit;
+  }
+
+  .floating-button:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid;
+  }
+
+  /* ------------------------------- */
 </style>
 
 

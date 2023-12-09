@@ -112,7 +112,7 @@
 
         <!-- Dismiss Job Container  -->
         <div class="Dismiss-section">
-            <form action="{% url 'job_dismiss'%}" method="post">
+            <form action="{% url 'job_dismiss'%}" method="get">
              {% csrf_token %}
                 <input type="hidden" value = {{job.id}} name="job_id">
                 <button class="closeButton" id="closebutton" type="submit">

@@ -18,5 +18,5 @@ urlpatterns = [
     path("jobeditsaved/", views.job_edit_save, name="job_edit_save"),
     path("jobcreatepage/",views.job_create, name="job_create"),
     path("jobdelete/",views.job_delete,name="job_delete"),
-    path("jobdismiss/",views.job_dismiss,name="job_dismiss"),
+    path("jobdismiss/",views.dismiss_job,name="job_dismiss"),
 ]

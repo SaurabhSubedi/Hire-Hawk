@@ -48,7 +48,8 @@ def login_view(request):
             messages.error(request,"Please enter valid credentials")
             return redirect('login')
     else:
-        return render(request,'Recruiter/RecLogin.html')
+        messages_data = messages.get_messages(request)
+        return render(request,'Recruiter/RecLogin.html',{'messages': messages_data})
 
 def logout_view(request):
     logout(request)
@@ -69,7 +70,11 @@ def signup_view(request):
                 user.set_password(password)
                 user.first_name = first_name
                 user.save()
+                messages.success(request,"Sign Up Successful.")
                 return redirect("appview")
+            else:
+                messages.error(request,"Passwords didnot match")
+                return redirect('signup')
     return render(request,'Recruiter/RecSignup.html')
 
 
@@ -98,7 +103,8 @@ def score_view(request,score):
 def admin_all_jobs(request):
     if request.user.is_superuser:
         all_jobs = Job_description.objects.all()
-        return render(request,'Recruiter/RecDashboard/RecDashboard.html',{'jobs': all_jobs})
+        messages_data = messages.get_messages(request)
+        return render(request,'Recruiter/RecDashboard/RecDashboard.html',{'jobs': all_jobs,'messages': messages_data})
     else:
         return redirect('login')
 
@@ -135,12 +141,14 @@ def job_edit_save(request):
             job.requirement = requirements
             job.salary = salary
             job.save()
+            messages.success(request,"Job edited successfully")
             return redirect("admin_dashboard")
 def about_view(request):
     return render(request, "About.html")
 
 def contactus_view(request):
-    return render(request, "ContactUs.html")
+    if request.user.is_superuser:
+        return render(request, "Recruiter/ContactUs.html")
 
 def Acontactus_view(request):
     return render(request, "Applicant Updated/ContactUs.html")
@@ -158,7 +166,7 @@ def job_create(request):
             brief_stat = request.POST.get("brief_stat")
             job = Job_description(title = job_title, brief_stat = brief_stat, responsibility = responsibilities, requirement= requirements,salary = salary)
             job.save()
-            messages.success(request,"Job created successfully")
+            messages.success(request,"Job Created Successfully!")
             return redirect("admin_dashboard")
         return render(request,"Recruiter/RecDashboard/RecJobPostPage.html")
 
@@ -168,23 +176,41 @@ def job_delete(request):
             job_id = request.POST.get('job_id')
             job = get_object_or_404(Job_description,id=job_id)
             job.delete()
-            messages.success(request,"Job deleted successfully")
+            messages.success(request,"Job Deleted Successfully")
             return redirect('admin_dashboard')
 
-def job_dismiss(request):
+def dismiss_job(request):
     if request.user.is_superuser:
-        if request.method == "POST":
-            job_id = request.POST.get("job_id")
-            job = get_object_or_404(Job_description, id=job_id)
-            all_applicants = Applicant.objects.filter(job_description=job).order_by('-rank')
-            count_applicants = min(3,all_applicants.count())
-            top_applicants = all_applicants[:count_applicants]
-            for applicant in top_applicants:
-                subject = "Selection for further rounds"
-                message = "Test message"
-                sender_email = settings.EMAIL_HOST_USER
-                receiver = [applicant.user.email]
-                send_mail(subject,message,sender_email,receiver,fail_silently=False)
-                return redirect('admin_dashboard')
+            if request.method == "GET": 
+                job_id = request.GET.get("job_id")
+                job = get_object_or_404(Job_description, id=job_id)
+                all_applicants = Applicant.objects.filter(job_description=job).order_by('-rank')
+                count_applicants = min(3,all_applicants.count())
+                top_applicants = all_applicants[:count_applicants]
+                top_applicants_email = []
+                for applicant in top_applicants:
+                        top_applicants_email.append(applicant.user.email)
+                context = {
+                    'appli_email' :top_applicants_email,
+                    'job' :  job,
+                }
+                return render(request,"Recruiter/RecDashboard/RecEmailWritingPage.html",context)
+            if request.method =="POST":
+                job_id = request.POST.get("job_id")
+                subject = request.POST.get("subject")
+                body = request.POST.get("body")
+                job = get_object_or_404(Job_description,id=job_id)
+                all_applicants = Applicant.objects.filter(job_description=job).order_by('-rank')
+                count_applicants = min(3,all_applicants.count())
+                top_applicants = all_applicants[:count_applicants]
+                top_applicants_email = []
+                for applicant in top_applicants:
+                    sender_email = settings.EMAIL_HOST_USER
+                    receiver = [applicant.user.email]
+                    send_mail(subject,body,sender_email,receiver,fail_silently=False)
+                    job.delete()
+                    messages.success(request,"Email Send Succesfully")
+                    return redirect('admin_dashboard')
+
 
             
