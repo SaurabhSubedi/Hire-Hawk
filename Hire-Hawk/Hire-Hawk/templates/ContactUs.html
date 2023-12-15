@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load myfilter %}
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us -HireHawk</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="contact-container">
+        <div class="logo-container">
+          <!-- TODO -->
+           <!-- Import the logo here. -->
+            <img src="{% static 'image/HireHawkLogo.png' %}" alt="HireHawk Logo" class="Logo">
+        </div>
+        <div class="contact-info">
+            <p><strong>Phone:</strong> +977 9843468715</p>
+            <p><strong>Email:</strong> 
+              hirehawk@gmail.com
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info@hirehawk.com</p>
+            </p>
+        </div>
+    </div>
+
+</body>
+
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.Logo {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+
+.contact-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #66D1FF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(233, 233, 233, 0.363);
+}
+
+.logo-container {
+    text-align: center;
+}
+
+.logo-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-info p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.contact-info strong {
+    font-weight: bold;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+</style>
+
+</html>

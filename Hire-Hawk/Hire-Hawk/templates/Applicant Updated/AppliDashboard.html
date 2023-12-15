@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Applicant HomePage</title>
+  <link rel="stylesheet" href="{% static "css/AppliDashStyles.css" %}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav>
+    <div class="logo">
+      <img src="{% static "image/HireHawkLogo.png"%}" alt="Logo">
+    </div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="{% url 'about' %}" target="_blank">About</a></li>
+      <li><a href="{% url 'contactus' %}" target="_blank">Contact</a></li>
+      <li class="profile"><a href="{% url 'profile' %}"><img src="{% static "image/profile-image.jpg" %}" alt="ProfileAvatar"></a></li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <div class="text-content">
+      <h2></h2>
+      <p></p>
+    </div>
+    <input type="file" id="fileInput" accept=".pdf" style="display: none;">
+  </div>
+{% for job in jobs %}
+  <div class="content" >
+    <div class="text-content">
+      <h2>{{job.title}}</h2>
+      <p>
+        {{job.brief_stat}}
+      </p>
+    </div>
+    <form method="post" action={% url 'job_desc' %}>
+      {% csrf_token %}
+      <input type = "hidden" value = {{job.id}} name="job_id" ></input>
+     <button id="fileInputButton" onclick="redirectToAboutJob()" type = "submit">
+      View Details
+     </button>
+    </form>
+    <div class="selected-file" id="selectedFile1"></div>
+  </div>
+{% endfor %}
+
+ 
+  <script src="{% static "js/AppliScript.js" %}"></script>
+
+</body>
+</html>

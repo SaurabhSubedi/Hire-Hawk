@@ -1,0 +1,48 @@
+/* Styles for roles.html page */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #B467EF, #66D1FF);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  background-color: #66D1FF;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-bottom: 5px;
+}
+
+.role-buttons {
+  display: flex;
+  flex-direction: column; /* Adjusted to arrange buttons vertically */
+  align-items: center; /* Center buttons horizontally */
+}
+
+button {
+  font-family: 'Poppins', sans-serif;
+  background-color: #B467EF;
+  color: white;
+  padding: 11px 30px;
+  border: none;
+  border-radius: 23px;
+  cursor: pointer;
+  margin: 10px 0; /* Adjusted to provide space between buttons */
+  font-weight: 600; /* Semibold weight */
+}
+
+button:hover {
+  background-color: #9543d9;
+}
+
+p{
+  font-size: 10px;
+}

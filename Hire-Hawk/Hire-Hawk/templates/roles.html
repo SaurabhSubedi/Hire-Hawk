@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Your Role</title>
+  <link rel="stylesheet" href="{% static "css/rolesStyles.css" %}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"> <!-- Link to Poppins font -->
+</head>
+<body>
+
+  <div class="container">
+    <h2>Choose Your Role</h2>
+
+    <div class="role-buttons">
+      <button onclick="redirectToRecruiterPage()">I'm a Recruiter</button>
+      <button onclick="redirectToApplicantPage()">I'm an Applicant</button>
+    </div>
+  </div>
+
+  <script src="{% static "js/rolesScript.js"%}"></script>
+
+</body>
+</html>

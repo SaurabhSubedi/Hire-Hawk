@@ -19,7 +19,7 @@
         <ul>
           <li><a href="{% url 'appview'%}">Home</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
-          <li><a href="{% url 'contactus' %}" class="thispage">Contact</a></li>
+          <li><a href="#" class="thispage">Contact</a></li>
           <li class="nav-item profile" id="profileImage" onclick="showPopup()">
             <img src="{% static "image/profile-image.jpg" %}" alt="Profile Avatar">
           </li>
@@ -28,7 +28,7 @@
 
       <!-- Logout Dialog -->
 <div id="popup" class="popup">
-    <button onclick="logout()" class="logoutbtn">Logout</button>
+  <button class="logoutbtn" onclick="location.href='{% url 'logout' %}'">Logout</button>
     <button onclick="closePopup()" >Cancel</button>
   </div>
   
