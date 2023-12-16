@@ -20,9 +20,18 @@
           <li><a href="{% url 'appview' %}">Home</a></li>
           <li><a href="{% url 'about' %}" class="thispage">About</a></li>
           <li><a href="{% url 'Acontactus' %}">Contact</a></li>
-          <li class="profile"><a href="{% static url 'profile' %}"><img src="{% static "image/profile-image.jpg" %}" alt="ProfileAvatar"></a></li>
+          <li class="nav-item profile" id="profileImage" onclick="showPopup()">
+            <img src="{% static "image/profile-image.jpg" %}" alt="Profile Avatar">
+          </li>
         </ul>
       </nav>
+      <div id="popup" class="popup">
+        <button class="logoutbtn" onclick="location.href='{% url 'logout' %}'">Logout</button>
+          <button onclick="closePopup()" >Cancel</button>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+      
     <header>
         <img src="{% static 'image/HireHawkLogo.png' %}" alt="HireHawk Logo" class="logo">
         <h1>About Us</h1>
@@ -139,6 +148,45 @@ nav .profile img {
   cursor: pointer;
 }
 
+   /* Popup styling */
+   .popup {
+  display: none;
+  position: absolute;
+  background: #fff;
+  border-radius: 7px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup button {
+  margin: 6%;
+  /* margin-left: 10px; */
+  font-family: 'Poppins', sans-serif;
+  color: black;
+  border-radius: 7px;
+  margin-left: auto; 
+  font-weight: 600;
+  border: 1px solid black;
+  background-color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.popup button:hover {
+  background-color: #B467EF;
+  color: white; /* Optional: Change text color on hover */
+}
+
+.popup .logoutbtn:hover {
+  background-color: red;
+  color: white; 
+}
+
+
 
     header {
         background-color: #66D1FF;
@@ -198,4 +246,23 @@ nav .profile img {
 
 
 </style>
+<script>
+    // Add the following code to your scripts.js file
+  function showPopup() {
+    $("#popup").css({
+      top: $("#profileImage").offset().top + $("#profileImage").outerHeight(),
+      left: $("#profileImage").offset().left - 60
+    }).show();
+  }
+  
+  function closePopup() {
+    $("#popup").hide();
+  }
+  
+  function logout() {
+    closePopup();
+  }
+
+
+  </script>
 </html>

@@ -76,13 +76,11 @@
 
 
 
-  <button onclick='location.href="{% url "job_create" %}" '>
-    <div class="floating-button" id="floatingButton">
+  <button onclick='location.href="{% url "job_create" %}" ' class="floating-button" id="floatingButton">
       <span class="icon">
         ➕
       </span>
       <span class="text">Create Job</span>
-    </div>
   </button>
 
   {% for message in messages %}
