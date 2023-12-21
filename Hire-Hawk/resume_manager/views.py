@@ -87,8 +87,10 @@ def resume_upload(request):
         new_appli = Applicant(user = current_user,job_description= job,resume= resume)
         new_appli.save()
         job_requirement = job.requirement
+        skill1 = skill_extraction(job_requirement.lower())
         resume_text = read_text(new_appli.resume.path)
-        score = my_cosine_similarity(job_requirement,resume_text)
+        skill2 = skill_extraction(resume_text.lower())
+        score = my_cosine_similarity(skill1,skill2)
         new_appli.rank = score
         new_appli.save()
         score = score*100
