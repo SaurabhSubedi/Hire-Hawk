@@ -9,7 +9,6 @@ import docx
 
 nltk.download('punkt')
 def my_cosine_similarity(skill_list1, skill_list2):
-    casual_words = {'can', 'will', 'yourselves', 'don', 'them', 'where', "hadn't", "aren't", 'its', 'here', "doesn't", 'been', 'on', 'was', 'up', 'needn', 'off', 'most', 'other', 'the', 'there', 've', 'himself', 'a', 'all', 'won', 'only', 'but', 'or', 'my', 'those', 'now', 'shouldn', 'both', 'isn', "she's", 'mustn', 'an', 'be', 'if', 'do', 'than', 'they', 'nor', 'how', 'y', "should've", 'for', 'theirs', 'under', "don't", 'should', 'herself', 'him', 'that', 'his', 'i', 't', 'll', 'not', 'mightn', "isn't", 'had', "you'd", 'your', 'why', "wouldn't", 'myself', 'we', 'again', 'out', 'to', "haven't", 'her', 'our', 'he', 'few', "hasn't", 'after', "it's", "didn't", 'does', 'because', 'from', "wasn't", "you've", 'more', 'is', 'd', 'have', 'above', 'ma', 'having', 'at', 'before', 'as', "that'll", "you're", 'with', 'no', 'over', 're', 'of', 'and', 'while', 'own', 'which', 'being', 'ourselves', 'you', 'themselves', 'am', 'this', 'o', 'haven', 'during', "you'll", 'doing', 'me', 'each', 'then', 'wasn', 'who', 'she', 'yourself', 'between', 'in', 'what', 'very', "mightn't", 'itself', 'such', 'same', 'their', 'down', 'm', 'below', 'further', 'doesn', "weren't", "couldn't", 'these', 'hadn', 'about', 'hers', 'didn', 'couldn', 'through', 'aren', 'ours', 'it', 'whom', 'just', 'too', "mustn't", 'weren', "won't", "shan't", 'hasn', 'once', 'are', 'has', 'against', 'any', 'when', "needn't", 'by', 'yours', 'some', 'so', 'wouldn', "shouldn't", 's', 'were', 'did', 'until', 'ain', 'into', 'shan'}
 
     # Preprocess and filter skills
     def preprocess_and_filter(skill_list):
@@ -18,7 +17,7 @@ def my_cosine_similarity(skill_list1, skill_list2):
             tokenized_word = word_tokenize(skill)
             for word in tokenized_word:
                 cleaned_word = word.lower()
-                if cleaned_word.isalnum() and cleaned_word not in casual_words:
+                if cleaned_word.isalnum():
                     filtered_tokens.append(cleaned_word)
         return Counter(filtered_tokens)
 
