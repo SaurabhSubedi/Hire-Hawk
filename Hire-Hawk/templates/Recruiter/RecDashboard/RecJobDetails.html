@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 {% load myfilter %}
 
@@ -10,12 +11,45 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"> <!-- Link to Poppins font -->
 
 </head>
-
 <body>
-    
+    <script>
+        function showPopup() {
+          $("#popup").css({
+            top: $("#profileImage").offset().top + $("#profileImage").outerHeight(),
+            left: $("#profileImage").offset().left - 60
+          }).show();
+        }
+      
+        function closePopup() {
+          $("#popup").hide();
+        }
+      
+        function logout() {
+          closePopup();
+        }
+      
+      </script>
+  <nav>
+    <div class="logo">
+    <a href="{% url 'admin_dashboard' %}" class="onHoverTurnRedUnderline">&lt;&lt; Back</a>
+    </div>
+    <ul>
+      <li><a href="{% url 'admin_dashboard' %}">Home</a></li>
+      <li><a href="{% url 'contactus' %}">Contact</a></li>
+      <li class="nav-item profile" id="profileImage" onclick="showPopup()">
+        <img src="{% static "image/profile-image.jpg" %}" alt="Profile Avatar">
+      </li>
+    </ul>
+  </nav>
 
+  <!-- Logout Dialog -->
+  <div id="popup" class="popup">
+    <button class="logoutbtn" onclick="location.href='{% url 'logout' %}'">Logout</button>
+    <button onclick="closePopup()">Cancel</button>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <div class="container">
-
         <!-- Rank Container  -->
         <div class="rank-container">
             <table>
@@ -159,6 +193,7 @@
         .rank-container {
             background-color: #fff;
             padding: 20px;
+            margin-top: 10%;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             margin-bottom: 20px;
@@ -297,6 +332,45 @@
       background-color: red;
     }
 
+    /* PopUp onClick On Profile Icon */
+    /* Popup styling */
+   .popup {
+    display: none;
+    position: absolute;
+    background: #fff;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .popup button {
+    margin: 6%;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    border-radius: 7px;
+    margin-left: auto;
+    font-weight: 600;
+    border: 1px solid black;
+    background-color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .popup button:hover {
+    background-color: #B467EF;
+    color: white;
+    /* Optional: Change text color on hover */
+  }
+
+  .popup .logoutbtn:hover {
+    background-color: red;
+    color: white;
+  }
+
     
     /* Dismiss Btn */
     .Dismiss-section {
@@ -351,15 +425,61 @@
         color: #333;
         font-size: 16px;
     }
+    /* Nav-styling */
+    nav {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to right, #131414, #3b3342);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-        
+  nav .logo img {
+    max-height: 40px;
+  }
 
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  nav li {
+    margin-right: 20px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  nav .profile {
+    cursor: pointer;
+  }
+
+  nav .profile img {
+    border-radius: 50%;
+    max-height: 40px;
+    cursor: pointer;
+  }
+
+  /* ----------------------------------------- */
+
+
+
+  .onHoverTurnRedUnderline:hover {
+    border-bottom: 2px solid red; 
+}
     </style>
-
-    <script>
   
-
-    </script>
 </body>
 
 </html>

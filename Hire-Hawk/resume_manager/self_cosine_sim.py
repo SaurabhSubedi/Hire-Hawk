@@ -62,3 +62,7 @@ def read_pdf(file_path):
             page = pdf_reader.pages[page_num]
             text += page.extract_text()
     return text
+
+
+
+# jakkard's 

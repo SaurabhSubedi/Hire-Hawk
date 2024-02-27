@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Applicant HomePage</title>
-  <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"> -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -26,6 +25,7 @@
 
   <!-- Logout Dialog -->
 <div id="popup" class="popup">
+  <button class="userProfile" onclick="location.href='{% url 'userProfile' %}'">Profile</button>
   <button class="logoutbtn" onclick="location.href='{% url 'logout' %}'">Logout</button>
   <button onclick="closePopup()" >Cancel</button>
 </div>
@@ -204,7 +204,7 @@ nav .profile img {
 
 .popup button:hover {
   background-color: #B467EF;
-  color: white; /* Optional: Change text color on hover */
+  color: white;
 }
 
 .popup .logoutbtn:hover {

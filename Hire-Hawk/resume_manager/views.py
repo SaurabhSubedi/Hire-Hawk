@@ -156,8 +156,11 @@ def contactus_view(request):
 def Acontactus_view(request):
     return render(request, "Applicant Updated/ContactUs.html")
 
-def profile_view(request):
-    return render(request, "ProfiePage.html")
+# def profile_view(request):
+#     return render(request, "ProfiePage.html")
+
+def userProfile(request):
+    return render(request, "Applicant Updated/userProfile.html")
 
 def job_create(request):
     if request.user.is_superuser:
