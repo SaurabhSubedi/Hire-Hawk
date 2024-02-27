@@ -95,6 +95,7 @@ def resume_upload(request):
         new_appli.save()
         score = score*100
         score = int(score)
+        #print(score)
         return redirect('score',score=score)
     return redirect('job_desc')
         

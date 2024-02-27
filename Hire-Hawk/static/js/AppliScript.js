@@ -7,7 +7,6 @@ document.getElementById('fileInputButton').addEventListener('click', function() 
     if (selectedFile) {
       const fileName = selectedFile.name;
       alert(`Selected file: ${fileName}`);
-      // You can add additional logic here to handle the selected file
     }
 
   });

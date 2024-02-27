@@ -21,15 +21,14 @@ def my_cosine_similarity(skill_list1, skill_list2):
                     filtered_tokens.append(cleaned_word)
         return Counter(filtered_tokens)
 
-
-    # Create vectors
+    # Create Vectors
     counter1 = preprocess_and_filter(skill_list1)
     counter2 = preprocess_and_filter(skill_list2)
 
     vector1 = [counter1[word] for word in counter1]
     vector2 = [counter2[word] for word in counter1]
 
-    # Calculate cosine similarity
+    # Calculate Cosine Similarity
     dot_product = sum(i * j for i, j in zip(vector1, vector2))
     norm_vector1 = math.sqrt(sum(x ** 2 for x in vector1))
     norm_vector2 = math.sqrt(sum(x ** 2 for x in vector2))
