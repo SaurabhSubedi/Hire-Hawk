@@ -95,9 +95,19 @@ def resume_upload(request):
         final_score = (score+score2)/2
         new_appli.rank = final_score
         new_appli.save()
-        final_score = final_score*100
-        final_score = int(final_score)
-        return redirect('score',score=final_score)
+        current_user_rank = final_score
+        all_applicants = Applicant.objects.filter(job_description=job).order_by('-rank')
+        total_applicants = all_applicants.count()
+        higher_rank_applicants = all_applicants.filter(rank__gt=current_user_rank)
+        count_higher_rank_applicants = higher_rank_applicants.count()
+        count_lower_or_equal_rank_applicants = total_applicants - count_higher_rank_applicants
+        if total_applicants == 0:
+            percentile_rank_ratio = 1
+        else:
+            percentile_rank_ratio = count_lower_or_equal_rank_applicants / total_applicants
+        current_user_percentage_rank = percentile_rank_ratio * 100
+        current_user_percentage_rank = int(current_user_percentage_rank)
+        return redirect('score',score=current_user_percentage_rank)
     return redirect('job_desc')
         
 def score_view(request,score):
