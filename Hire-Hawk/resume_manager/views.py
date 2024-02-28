@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect,reverse
-from .models import Job_description,Applicant
+from .models import Job_description,Applicant,Profile
 from django.contrib.auth import login, logout,authenticate
 from django.contrib.auth.models import User
 from .self_cosine_sim import my_cosine_similarity,read_text,jaccards_coefficient
@@ -70,6 +70,8 @@ def signup_view(request):
                 user.set_password(password)
                 user.first_name = first_name
                 user.save()
+                profile = Profile.objects.create(user= user)
+                profile.save()
                 messages.success(request,"Sign Up Successful.")
                 return redirect("appview")
             else:

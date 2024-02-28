@@ -30,3 +30,9 @@ class Applicant(models.Model):
         return self.user.email
     
 
+class Profile(models.Model):
+    user = models.OneToOneField(User,on_delete=models.CASCADE)
+    cv = models.FileField(upload_to = 'user_cvs/')
+
+    def __str__(self):
+        return self.user.email
