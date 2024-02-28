@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect,reverse
 from .models import Job_description,Applicant
 from django.contrib.auth import login, logout,authenticate
 from django.contrib.auth.models import User
-from .self_cosine_sim import my_cosine_similarity,read_text
+from .self_cosine_sim import my_cosine_similarity,read_text,jaccards_coefficient
 from .utils import skill_extraction
 from django.contrib import messages
 from django.shortcuts import get_object_or_404
@@ -91,12 +91,13 @@ def resume_upload(request):
         resume_text = read_text(new_appli.resume.path)
         skill2 = skill_extraction(resume_text.lower())
         score = my_cosine_similarity(skill1,skill2)
-        new_appli.rank = score
+        score2 = jaccards_coefficient(skill1,skill2)
+        final_score = (score+score2)/2
+        new_appli.rank = final_score
         new_appli.save()
-        score = score*100
-        score = int(score)
-        #print(score)
-        return redirect('score',score=score)
+        final_score = final_score*100
+        final_score = int(final_score)
+        return redirect('score',score=final_score)
     return redirect('job_desc')
         
 def score_view(request,score):

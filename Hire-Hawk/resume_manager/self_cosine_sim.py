@@ -34,6 +34,8 @@ def my_cosine_similarity(skill_list1, skill_list2):
     norm_vector2 = math.sqrt(sum(x ** 2 for x in vector2))
 
     cosin_sim = dot_product / (norm_vector1 * norm_vector2) if (norm_vector1 * norm_vector2) != 0 else 0
+    print(cosin_sim)
+
     return cosin_sim
 
 
@@ -65,4 +67,14 @@ def read_pdf(file_path):
 
 
 
-# jakkard's 
+def jaccards_coefficient(skill_list1, skill_list2):
+    set1 = set(skill_list1)
+    set2 = set(skill_list2)
+    intersection = len(set1.intersection(set2))
+    union = len(set1.union(set2))
+    if union != 0:
+        jaccard_similarity = intersection / union
+    else:
+        jaccard_similarity = 0
+    print(jaccard_similarity)
+    return jaccard_similarity
