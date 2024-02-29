@@ -23,6 +23,14 @@
     <label for="email">Email</label>
     <input type="email" id="email" name="email" required>
 
+    <label for="Resume">Upload Your Resume:</label>
+    <div id="file-drop-area" onclick="openFileExplorer()" ondrop="handleDrop(event)" ondragover="handleDragOver(event)">
+      <p>Drag & Drop files here or click to select</p>
+      <input type="file" id="file-input" accept=".pdf, .docx" onchange="handleFileSelect(event)">
+      <div id="file-name-display"></div>  
+    </div>
+
+    <div id="file-name-display"></div> 
     <label for="password">Password</label>
     <input type="password" id="password" name="password" required>
 
@@ -101,7 +109,6 @@ function closePopup() {
   body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to right, #B467EF, #66D1FF);
-    /* Additional styles for centering the form */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -120,7 +127,7 @@ function closePopup() {
   
   label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 0.8%;
   }
   
   input {
@@ -128,7 +135,7 @@ function closePopup() {
     padding: 8px;
     margin-bottom: 16px;
     box-sizing: border-box;
-    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.700);
     border-radius: 8px; 
     outline: none;
   }
@@ -138,9 +145,9 @@ function closePopup() {
     font-weight: bold;
     background-color: #66D1FF;
     color: black;
-    padding: 8px 40px;
+    padding: 7px 49px;
     border: 1px solid black;
-    border-radius: 23px;
+    border-radius: 16px;
     cursor: pointer;
     display: block;
     margin: 0 auto;
@@ -155,7 +162,7 @@ function closePopup() {
   
   p {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
     clear: both;
   }
   
@@ -167,3 +174,91 @@ function closePopup() {
   }
 </style>
 </html>
+
+
+
+
+
+
+
+
+
+
+<style>
+  #file-drop-area {
+    border: 1.2px dashed black;
+    border-radius: 8px;
+    background-color: white;
+    padding: 2px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  #file-drop-area:hover {
+    background-color: #66D1FF;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+
+  #file-drop-area p {
+      margin: 0;
+      color: grey;
+    }
+
+    #file-input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+  #file-name-display {
+      color: black;
+      font-size: 14px;
+      display: none;
+    }
+</style>
+
+<script>
+function openFileExplorer() {
+      document.getElementById('file-input').click();
+    }
+
+    function handleDrop(event) {
+      event.preventDefault();
+      const files = event.dataTransfer.files;
+      handleFiles(files);
+    }
+
+    function handleDragOver(event) {
+      event.preventDefault();
+    }
+
+    function handleFileSelect(event) {
+      const files = event.target.files;
+      handleFiles(files);
+    }
+
+    function handleFiles(files) {
+      const fileNameDisplay = document.getElementById('file-name-display');
+      if (files.length > 0) {
+        const fileName = files[0].name;
+        fileNameDisplay.textContent = fileName;
+        fileNameDisplay.style.display = 'block';
+      }
+
+      for (const file of files) {
+        if (file.type === 'application/pdf' || file.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
+          // Process the file here (e.g., upload, display, etc.)
+          console.log('File selected:', file.name);
+        } else {
+          alert('Invalid file format. Please select a .pdf or .docx file.');
+        }
+      }
+    }
+</script>
