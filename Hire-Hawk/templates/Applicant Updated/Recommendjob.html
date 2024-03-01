@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Applicant HomePage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav>
+    <div class="logo">
+      <img src="{% static "image/HireHawkLogo.png"%}" alt="Logo">
+    </div>
+    <ul>
+      <li><a href="{% url 'appview' %}" class="thispage">Home</a></li>
+      <li><a href="{% url 'about' %}">About</a></li>
+      <li><a href="{% url 'Acontactus' %}">Contact</a></li>
+      <li class="nav-item profile" id="profileImage" onclick="showPopup()">
+        <img src="{% static "image/profile-image.jpg" %}" alt="Profile Avatar">
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Logout Dialog -->
+<div id="popup" class="popup">
+  <button class="userProfile" onclick="location.href='{% url 'userProfile' %}'">Profile</button>
+  <button class="logoutbtn" onclick="location.href='{% url 'logout' %}'">Logout</button>
+  <button onclick="closePopup()" >Cancel</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+  <div class="content">
+    <div class="text-content">
+      <h2></h2>
+      <p></p>
+    </div>
+    <input type="file" id="fileInput" accept=".pdf" style="display: none;">
+  </div>
+{% for job,similarity_score  in top_jobs %}
+  <div class="content" >
+    <div class="text-content">
+      <h2>{{job.title}}</h2>
+      <p>
+        {{job.brief_stat}}
+      </p>
+    </div>
+    <form method="post" action={% url 'job_desc' %}>
+      {% csrf_token %}
+      <input type = "hidden" value = {{job.id}} name="job_id" ></input>
+     <button id="fileInputButton" onclick="redirectToAboutJob()" type = "submit">
+      View Details >>
+     </button>
+    </form>
+    <div class="selected-file" id="selectedFile1"></div>
+  </div>
+{% endfor %}
+
+{% for message in messages%}
+<!-- Copy this POPUP to use Everywhere -->
+<div id="emailPopup" class="popup">
+  <div id="popupContent">
+    {{meessage}}
+    <!-- backend msg will be displayed here -->
+  </div>
+  <button onclick="closePopup()">Close</button>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<style>
+/* Popup styling */
+.popup {
+position: fixed;
+top: 50%;
+border-radius: 8px;
+left: 50%;
+transform: translate(-50%, -50%);
+background: #fff;
+border: 1px solid #ccc;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+padding: 12px;
+text-align: center;
+z-index: 1000;
+}
+
+.popup button {
+font-family: 'Poppins' sans-serif;
+font-weight: bold;
+margin-top: 10px;
+color: black;
+background-color: white;
+border-radius: 8px;
+border: 1px solid;
+cursor: pointer;
+padding: 6px;
+float: right;
+}
+
+.popup button:hover{
+  background-color: #B467EF;
+  color: white;
+}
+</style>
+<script>
+  function showPopup() {
+  
+    $("#popupContent");
+    $("#emailPopup").show();
+  }
+  
+  function closePopup() {
+    $("#emailPopup").hide();
+  }
+</script>
+<!-- -----------PopUp End---------- -->
+{% endfor %}
+ 
+  <script src="{% static "js/AppliScript.js" %}"></script>
+
+</body>
+
+
+<style>
+  body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  /* background: linear-gradient(to right, #B467EF, #66D1FF ); */
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(to right, #131414, #3b3342);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo img {
+  max-height: 40px; 
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+nav .profile{
+  cursor: pointer;
+}
+
+nav .profile img {
+  border-radius: 50%;
+  max-height: 40px;
+  cursor: pointer;
+}
+
+/* Popup styling */
+.popup {
+  display: none;
+  position: absolute;
+  background: #fff;
+  border-radius: 7px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup button {
+  margin: 6%;
+  /* margin-left: 10px; */
+  font-family: 'Poppins', sans-serif;
+  color: black;
+  border-radius: 7px;
+  margin-left: auto; 
+  font-weight: 600;
+  border: 1px solid black;
+  background-color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.popup button:hover {
+  background-color: #B467EF;
+  color: white;
+}
+
+.popup .logoutbtn:hover {
+  background-color: red;
+  color: white; 
+}
+
+
+
+.content {
+  margin-top: 16px; 
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 20px;
+  cursor: pointer;
+  /* background-color: #66D1FF; */
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
+  border: none;
+  box-shadow: 0 0 0 0.2px black;
+}
+
+.text-content {
+  margin-bottom: 10px; 
+}
+
+.text-content h2,
+.text-content p {
+  margin: 0;
+}
+
+
+
+#fileInputButton {
+  font-family: 'Poppins', sans-serif;
+  color: black;
+  /* border: none; */
+  border-radius: 13px;
+  cursor: pointer;
+  font-weight: 600;
+  border: 1px solid black;
+  background-color: white;
+  padding: 8px 20px;
+  /* display: flex; */
+  margin-left: 160vh;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#fileInputButton:hover {
+  background-color: #B467EF;
+  color: white; /* Optional: Change text color on hover */
+}
+
+
+   
+.thispage{
+  display: inline-block;
+  position: relative;
+}
+
+.thispage::after {
+ 
+ content: "";
+ display: block;
+ position: absolute;
+ bottom: 0;
+ right: 0;
+ height: 50%;
+ width: 50%;
+ border-bottom: 2px solid red; /* Change the color as needed */
+}
+
+</style>
+
+<script>
+  
+function showPopup() {
+  $("#popup").css({
+    top: $("#profileImage").offset().top + $("#profileImage").outerHeight(),
+    left: $("#profileImage").offset().left - 60
+  }).show();
+}
+
+function closePopup() {
+  $("#popup").hide();
+}
+
+function logout() {
+  closePopup();
+}
+
+</script>
+</html>
+

@@ -40,33 +40,24 @@
             </li>
         </ul>
     </nav>
+      <div class="container">
 
-    <div class="container">
-        <div class="profile-section">
-            <h2 class = "userProfileH2Tag">User Profile</h2>
-            <label for="name">Name: </label>
-            <input type="name" id = "name" placeholder="#{{email}}"></input>
+          <div class="profile-section">
+              <h2 class = "userProfileH2Tag">User Profile</h2>
+              <form action="{% url 'userProfile'%}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="name">Username:</label>
+                <input type="name" id = "name" placeholder="{{request.user.username}}" required name="username"></input>
+                <label for="resume">Updated Resume: </label>
+                <input type="file" id = "resume" placeholder="cv" required></input>
+                <button class="closeButton" id="closebutton" type="submit">
+                    <div class="closeLogo">&#10003;</div>
+                    <div>Save Changes</div>
+                </button>
+              </form>
+          </div>
 
-            <label for="email">Email: </label>
-            <input type="email" id = "email" placeholder="#{{email}}"></input>
-
-            <label for="resume">Upload/update your Resume: </label>
-            <input type="file" id = "resume" placeholder="email"></input>
-
-        </div>
-    </div>
-
-    <!-- Save Changes Button -->
-    <div class="Dismiss-section">
-        <form action="{% url 'job_dismiss'%}" method="get">
-         {% csrf_token %}
-            <input type="hidden" value = # name="#">
-            <button class="closeButton" id="closebutton" type="submit">
-                <div class="closeLogo">&#10003;</div>
-                <div>Save Changes</div>
-            </button>
-        </form>  
-    </div>
+      </div>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </body>

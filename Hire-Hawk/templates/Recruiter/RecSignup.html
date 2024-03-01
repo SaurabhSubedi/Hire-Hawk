@@ -12,7 +12,7 @@
   <img src="{% static 'image/HireHawkLogo.png'%}" alt="HireHawkLogo" style="width: 100%; max-width: 300px; margin-bottom: 20px; padding-right: 70px;">
 
   <div class="container">
-  <form id="signupForm" method="post" action = {% url 'signup' %}>
+  <form id="signupForm" method="post" action = {% url 'signup' %} enctype="multipart/form-data">
     {% csrf_token %}
     <label for="name">Name</label>
     <input type="text" id="name" name="name" required>
@@ -26,7 +26,7 @@
     <label for="Resume">Upload Your Resume:</label>
     <div id="file-drop-area" onclick="openFileExplorer()" ondrop="handleDrop(event)" ondragover="handleDragOver(event)">
       <p>Drag & Drop files here or click to select</p>
-      <input type="file" id="file-input" accept=".pdf, .docx" onchange="handleFileSelect(event)">
+      <input type="file" id="file-input" accept=".pdf, .docx" onchange="handleFileSelect(event)" name="resume" required>
       <div id="file-name-display"></div>  
     </div>
 

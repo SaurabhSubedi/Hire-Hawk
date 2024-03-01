@@ -11,7 +11,6 @@ urlpatterns = [
     path("about/", views.about_view, name= "about"),
     path("ContactUs/", views.contactus_view, name= "contactus"),
     path("AContactUs/", views.Acontactus_view, name= "Acontactus"),
-    # path("ProfilePage/", views.profile_view, name= "profile"),
     path("admindash/", views.admin_all_jobs, name= "admin_dashboard"),
     path("adminjobdesc/",views.admin_job_desc,name="admin_job_desc"),
     path("jobedit/", views.admin_job_edit, name="admin_job_edit"),
@@ -20,4 +19,5 @@ urlpatterns = [
     path("jobdelete/",views.job_delete,name="job_delete"),
     path("jobdismiss/",views.dismiss_job,name="job_dismiss"),
     path("userProfile/",views.userProfile,name="userProfile"),
+    path("recommendedjobs/", views.recommended_jobs, name="recommededjobs")
 ]

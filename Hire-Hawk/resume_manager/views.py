@@ -56,12 +56,13 @@ def logout_view(request):
     return redirect('login')
 
 def signup_view(request):
-    if request.method == "POST":
+    if request.method == "POST": 
         email = request.POST.get("email")
         username = request.POST.get("username")
         first_name = request.POST.get("name")
         password = request.POST.get("password")
         confirm_password = request.POST.get("confirmPassword")
+        resume = request.FILES['resume']
         if( User.objects.filter(email=email).exists() or User.objects.filter(username=username).exists()):
             return redirect('signup')
         else:
@@ -70,7 +71,7 @@ def signup_view(request):
                 user.set_password(password)
                 user.first_name = first_name
                 user.save()
-                profile = Profile.objects.create(user= user)
+                profile = Profile.objects.create(user= user,cv = resume)
                 profile.save()
                 messages.success(request,"Sign Up Successful.")
                 return redirect("appview")
@@ -82,7 +83,7 @@ def signup_view(request):
 
 def resume_upload(request):
     if request.method == "POST":
-        resume = request.FILES['resume']
+        resume = request.user.profile.cv
         current_user = request.user
         job_id = request.POST.get("job_desc")
         job = get_object_or_404(Job_description,id=job_id)
@@ -173,6 +174,17 @@ def Acontactus_view(request):
 #     return render(request, "ProfiePage.html")
 
 def userProfile(request):
+    if request.method == "POST":
+        new_resume = request.FILES.get("resume")
+        new_username = request.POST.get("username")
+        if new_username:
+            request.user.username = new_username
+            request.user.save()
+        if new_resume:
+            request.user.profile.cv = resume
+            request.user.profile.save()
+        return redirect("userProfile")
+
     return render(request, "Applicant Updated/userProfile.html")
 
 def job_create(request):
@@ -232,4 +244,18 @@ def dismiss_job(request):
                     return redirect('admin_dashboard')
 
 
-            
+def recommended_jobs(request):
+    cv = request.user.profile.cv
+    resume_text = read_text(cv.path)
+    user_skills = skill_extraction(resume_text.lower())
+    all_jobs = Job_description.objects.all()
+    job_similarity_scores = {}
+    for job in all_jobs:
+        job_skills = skill_extraction(job.requirement.lower())
+        cosine_similarity_score = my_cosine_similarity(user_skills,job_skills)
+        jaccards_similarity_score = jaccards_coefficient(user_skills,job_skills)
+        job_similarity_scores[job] = (cosine_similarity_score+jaccards_coefficient)/2
+        sorted_jobs = sorted(job_similarity_scores.items(), key=lambda x: x[1], reverse=True)
+    top_jobs = sorted_jobs[:5]
+    return render(request,'Applicant Updated/Recommendjob.html', {'top_jobs': top_jobs})
+

@@ -56,7 +56,6 @@
             </div>
             <form method="post" action = {% url 'resume_upload'%} enctype="multipart/form-data">
             {% csrf_token %}
-            <input type="file" id="fileInput" accept=".pdf,.docx" name="resume" required>
             <input type="hidden" name="job_desc" value = {{job.id}}>
             <button class="applynowbutton" type="submit">Apply Now</button>
             </form>
