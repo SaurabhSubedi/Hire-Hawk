@@ -90,7 +90,7 @@
       {{message}}
       <!-- backend msg will be displayed here -->
     </div>
-    <button onclick="closePopup()">Close</button>
+    <button onclick="mclosePopup()">Close</button>
   </div>
   {% endfor %}
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -135,7 +135,7 @@ float: right;
   $("#emailPopup").show();
   
   
-  function closePopup() {
+  function mclosePopup() {
     $("#emailPopup").hide();
   }
 </script>
@@ -288,7 +288,6 @@ float: right;
   .seeApplicantButton:hover {
     background-color: #B467EF;
     color: white;
-    /* Optional: Change text color on hover */
   }
 
 

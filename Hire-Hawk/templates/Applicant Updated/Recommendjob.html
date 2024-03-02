@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Applicant HomePage</title>
+  <title>Recommended Jobs - HireHawk</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -33,20 +33,22 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 
-  <div class="content">
-    <div class="text-content">
-      <h2></h2>
-      <p></p>
-    </div>
-    <input type="file" id="fileInput" accept=".pdf" style="display: none;">
-  </div>
+
+<div class="centerTitle" style="display: flex; justify-content: center; ">
+  <a href="{% url 'appview' %}" class = "all_jobs">All Jobs</a>
+  <span>&nbsp;|&nbsp;</span>
+  <a href="{% url 'recommededjobs' %}" class = "recom_jobs">Jobs for You</a>
+</div>
+
+
 {% for job,similarity_score  in top_jobs %}
   <div class="content" >
     <div class="text-content">
-      <h2>{{job.title}}</h2>
+      <h2>{{job.title}} ({{similarity_score}}% Match)</h2>
       <p>
         {{job.brief_stat}}
       </p>
+      <!-- <p>SHi</p> -->
     </div>
     <form method="post" action={% url 'job_desc' %}>
       {% csrf_token %}
@@ -127,6 +129,7 @@ float: right;
   body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
+  padding-top: 7%;
   /* background: linear-gradient(to right, #B467EF, #66D1FF ); */
 }
 
@@ -279,6 +282,26 @@ nav .profile img {
  width: 50%;
  border-bottom: 2px solid red; /* Change the color as needed */
 }
+
+
+.centerTitle a{
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.centerTitle .recom_jobs::after{
+    content: "";
+    display: block;
+    /* position: absolute; */
+    bottom: 0;
+    right: 0;
+    /* height: 50%;
+    width: 50%; */
+    border-bottom: 2px solid red;
+}
+
 
 </style>
 

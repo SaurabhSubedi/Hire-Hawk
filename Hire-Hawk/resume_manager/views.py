@@ -13,10 +13,13 @@ from django.conf import settings
 def applicant_view(request):
     if request.user.is_authenticated:
         jobs = Job_description.objects.all()
+        for job in jobs:
+            print(job.title)
         return render(request,'Applicant Updated/AppliDashboard.html',{'jobs': jobs})
+    
     else:
         return redirect('login')
-        
+    
 
 
 def job_details_view(request):
@@ -254,8 +257,12 @@ def recommended_jobs(request):
         job_skills = skill_extraction(job.requirement.lower())
         cosine_similarity_score = my_cosine_similarity(user_skills,job_skills)
         jaccards_similarity_score = jaccards_coefficient(user_skills,job_skills)
-        job_similarity_scores[job] = (cosine_similarity_score+jaccards_coefficient)/2
+        job_similarity_scores[job] = (cosine_similarity_score+jaccards_similarity_score)/2
         sorted_jobs = sorted(job_similarity_scores.items(), key=lambda x: x[1], reverse=True)
+        job_similarity_scores[job] = int(job_similarity_scores[job]*100)
     top_jobs = sorted_jobs[:5]
+    
     return render(request,'Applicant Updated/Recommendjob.html', {'top_jobs': top_jobs})
+
+
 

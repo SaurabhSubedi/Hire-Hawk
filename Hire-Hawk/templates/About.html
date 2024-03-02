@@ -26,6 +26,7 @@
         </ul>
       </nav>
       <div id="popup" class="popup">
+        <button class="userProfile" onclick="location.href='{% url 'userProfile' %}'">Profile</button>
         <button class="logoutbtn" onclick="location.href='{% url 'logout' %}'">Logout</button>
           <button onclick="closePopup()" >Cancel</button>
         </div>
@@ -90,6 +91,11 @@
         </div>
 
     </section>
+
+
+    <footer>
+      &copy; 2024, Hire-Hawk
+    </footer>
 
 
 
@@ -243,6 +249,13 @@ nav .profile img {
      width: 50%;
      border-bottom: 2px solid red; /* Change the color as needed */
    }
+
+   footer {
+      background-color: #333;
+      color: #fff;
+      padding: 1em;
+      text-align: center;
+    }
 
 
 </style>

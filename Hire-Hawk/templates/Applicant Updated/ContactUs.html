@@ -28,8 +28,9 @@
 
       <!-- Logout Dialog -->
 <div id="popup" class="popup">
+  <button class="userProfile" onclick="location.href='{% url 'userProfile' %}'">Profile</button>
   <button class="logoutbtn" onclick="location.href='{% url 'logout' %}'">Logout</button>
-    <button onclick="closePopup()" >Cancel</button>
+    <button onclick="closePopup()">Cancel</button>
   </div>
   
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>

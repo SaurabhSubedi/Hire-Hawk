@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{%load static%}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -11,66 +12,48 @@
 
 <body>
 
-  <!-- Copy this POPUP to use Everywhere -->
-<div id="emailPopup" class="popup">
-  <div id="popupContent">
-    I'm supposed to be a Message that Pops Up
-    <!-- backend msg will be displayed here -->
-  </div>
-  <button onclick="closePopup()">Close</button>
+  <script>
+    function showPopup() {
+      $("#popup").css({
+        top: $("#profileImage").offset().top + $("#profileImage").outerHeight(),
+        left: $("#profileImage").offset().left - 60
+      }).show();
+    }
+  
+    function closePopup() {
+      $("#popup").hide();
+    }
+  
+    function logout() {
+      closePopup();
+    }
+  
+  </script>
+<nav>
+<div class="logo">
+<a href="{% url 'admin_dashboard' %}" class="onHoverTurnRedUnderline">&lt;&lt; Back</a>
 </div>
+<ul>
+  <li><a href="{% url 'admin_dashboard' %}">Home</a></li>
+  <li><a href="{% url 'contactus' %}">Contact</a></li>
+  <li class="nav-item profile" id="profileImage" onclick="showPopup()">
+    <img src="{% static "image/profile-image.jpg" %}" alt="Profile Avatar">
+  </li>
+</ul>
+</nav>
+
+<!-- Logout Dialog -->
+<div id="popup" class="popup">
+<button class="logoutbtn" onclick="location.href='{% url 'logout' %}'">Logout</button>
+<button onclick="closePopup()">Cancel</button>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-<style>
-/* Popup styling */
-.popup {
-display: none;
-position: fixed;
-top: 10%;
-border-radius: 8px;
-left: 50%;
-transform: translate(-50%, -50%);
-background: #fff;
-border: 1px solid #ccc;
-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-padding: 12px;
-text-align: center;
-z-index: 1000;
-}
 
-.popup button {
-font-family: 'Poppins' sans-serif;
-font-weight: bold;
-margin-top: 10px;
-color: black;
-background-color: white;
-border-radius: 8px;
-border: 1px solid;
-cursor: pointer;
-padding: 6px;
-float: right;
-}
 
-.popup button:hover{
-  background-color: #B467EF;
-  color: white;
-}
-</style>
-<script>
-  function showPopup() {
-  
-    $("#popupContent");
-    $("#emailPopup").show();
-  }
-  
-  function closePopup() {
-    $("#emailPopup").hide();
-  }
-</script>
-<!-- -----------PopUp End---------- -->
 
   <div class="container">
-
     <!-- Job Container  -->
     <div class="job-container">
 <form action="{% url 'job_create' %}" method="post">
@@ -81,7 +64,7 @@ float: right;
         </div>
         <div class="job-description">
           <h5>Salary :</h5>
-          <input type="int" name="salary" placeholder="Salary" required>
+          <input type="number" name="salary" placeholder="Salary" required>
         </div>
 
     </div>
@@ -119,12 +102,13 @@ float: right;
         margin: 0;
         padding: 0;
         background-color: #f4f4f4;
-
+        overflow-x: hidden;
     }
 
     .container {
         max-width: 600px;
         margin: 20px auto;
+        margin-top: 7%;
         position: relative;
     }
 
@@ -149,6 +133,17 @@ float: right;
         margin-bottom: 20px;
     }
 
+    input[type="text"][name="job_title"] {
+      width: 50%;
+      padding: 8px;
+    
+    }
+
+    input[type="number"][name="salary"]{
+      width: 50%;
+      padding: 8px;
+      /* border-radius: 16px; */
+    } 
     .skills-list {
             list-style-type: none;
             padding: 0;
@@ -245,10 +240,6 @@ float: right;
         display: inline;
     }
 
-
-
-
-
     .applynowbutton {
          border: 1px solid black;
          background-color: white;
@@ -259,7 +250,7 @@ float: right;
 
     .applynowbutton:hover {
         background-color: #B467EF;
-        color: white; /* Optional: Change text color on hover */
+        color: white;
     }
 
     table {
@@ -335,6 +326,91 @@ float: right;
 textarea{
   border-radius: 10px;
 }
+/* PopUp onClick On Profile Icon */
+    /* Popup styling */
+    .popup {
+    display: none;
+    position: absolute;
+    background: #fff;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .popup button {
+    margin: 6%;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    border-radius: 7px;
+    margin-left: auto;
+    font-weight: 600;
+    border: 1px solid black;
+    background-color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .popup button:hover {
+    background-color: #B467EF;
+    color: white;
+  }
+      /* Nav-styling */
+      nav {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to right, #131414, #3b3342);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav .logo img {
+    max-height: 40px;
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  nav li {
+    margin-right: 20px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  nav .profile {
+    cursor: pointer;
+  }
+
+  nav .profile img {
+    border-radius: 50%;
+    max-height: 40px;
+    cursor: pointer;
+  }
+
+  /* ----------------------------------------- */
+
+  
+  .onHoverTurnRedUnderline:hover {
+    border-bottom: 2px solid red; 
+}
+
 
     
 

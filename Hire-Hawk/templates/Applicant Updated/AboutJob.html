@@ -15,19 +15,12 @@
     <!-- Logout Dialog -->
 <div id="popup" class="popup">
     <button class="userProfile" onclick="location.href='{% url 'userProfile' %}'">Profile</button>
-    <button class="logoutbtn" onclick="location.href='{% url 'logout' %}'">Logout</button>
+    <button class="logoutbtn" onclick="location.href='{% url 'logout'%}'">Logout</button>
     <button onclick="closePopup()" >Cancel</button>
   </div>
   
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   
-  
-    <div id="popup" class="popup">
-        <button class="userProfile" onclick="location.href='{% url 'userProfile' %}'">Profile</button>
-        <button class="logoutbtn" onclick="location.href='{% url 'logout' %}'">Logout</button>
-        <button onclick="closePopup()" >Cancel</button>
-      </div>
-      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <nav>
         <div class="logo">
             <a href="{% url 'appview' %}" class="onHoverTurnRedUnderline">&lt;&lt; Back</a>
@@ -89,6 +82,9 @@
             </div>
         </div>
     </div>
+
+
+
 
     <style>
         body {
@@ -196,7 +192,7 @@
             color: white; /* Optional: Change text color on hover */
         }
 
-        /* Popup styling */
+    /* Popup styling */
   .popup {
     margin-top: 1%;
     width: 8%;
@@ -231,7 +227,6 @@
   .popup button:hover {
     background-color: #B467EF;
     color: white;
-    /* Optional: Change text color on hover */
   }
 
   .popup .logoutbtn:hover {
@@ -304,8 +299,21 @@
 
   });
 
-  
+//   Logout Dialog PopUp
+function showPopup() {
+  $("#popup").css({
+    top: $("#profileImage").offset().top + $("#profileImage").outerHeight(),
+    left: $("#profileImage").offset().left - 60
+  }).show();
+}
 
+function closePopup() {
+  $("#popup").hide();
+}
+
+function logout() {
+  closePopup();
+}
     </script>
 </body>
 

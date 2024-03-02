@@ -47,7 +47,7 @@
               <form action="{% url 'userProfile'%}" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <label for="name">Username:</label>
-                <input type="name" id = "name" placeholder="{{request.user.username}}" required name="username"></input>
+                <input type="name" id = "name" placeholder="{{request.user.username}}" value="{{request.user.username}}" required name="username"></input>
                 <label for="resume">Updated Resume: </label>
                 <input type="file" id = "resume" placeholder="cv" required></input>
                 <button class="closeButton" id="closebutton" type="submit">
