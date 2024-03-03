@@ -13,8 +13,6 @@ from django.conf import settings
 def applicant_view(request):
     if request.user.is_authenticated:
         jobs = Job_description.objects.all()
-        for job in jobs:
-            print(job.title)
         return render(request,'Applicant Updated/AppliDashboard.html',{'jobs': jobs})
     
     else:

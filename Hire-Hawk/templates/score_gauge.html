@@ -263,4 +263,27 @@ body {
 
 
 </style>
+
+
+
+
+<script>
+   
+function showPopup() {
+  $("#popup").css({
+    top: $("#profileImage").offset().top + $("#profileImage").outerHeight(),
+    left: $("#profileImage").offset().left - 60
+  }).show();
+}
+
+function closePopup() {
+  $("#popup").hide();
+}
+
+function logout() {
+  closePopup();
+}
+
+  </script>
+
 </html>

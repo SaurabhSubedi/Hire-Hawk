@@ -76,5 +76,4 @@ def jaccards_coefficient(skill_list1, skill_list2):
         jaccard_similarity = intersection / union
     else:
         jaccard_similarity = 0
-    print(jaccard_similarity)
     return jaccard_similarity
